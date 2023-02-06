@@ -12,9 +12,10 @@ const VideoCards = (props) => {
     console.log(src);
     return (
         <div>
-            <div className="container py-4">
-                <div className="col">
-                    <div className="card shadow-sm">
+            <div className="container">
+
+
+                    <div>
                         <iframe
                             style={{"height": "500px", 'weihgt': "200px"}} className="card-img-top" alt={props.video.Title}
                             src={src}
@@ -22,6 +23,7 @@ const VideoCards = (props) => {
                             allowFullScreen
                             title="Embedded youtube"
                         />
+                            </div>
                         <div className="card-body">
                             <p className="card-text">{props.video.title}</p>
                             <div className="d-flex justify-content-between align-items-center">
@@ -31,9 +33,9 @@ const VideoCards = (props) => {
                             </div>
                         </div>
                     </div>
-                </div>
             </div>
-        </div>
+
+
     );
 };
 

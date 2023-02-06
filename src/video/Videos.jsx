@@ -3,6 +3,7 @@ import {Container, Form,Row,Col} from "react-bootstrap";
 import NewVideo from "./NewVideo.jsx";
 import VideoCards from "./VideoCards.jsx";
 
+
 const Videos = () => {
     const [videos, setVideos] = React.useState([]);
     const [filtered, setFiltered] = React.useState(videos);
@@ -55,20 +56,29 @@ const Videos = () => {
                         </Col>
                     </Row>
                 </Container>
-                <div className="container py-4" >
-                    <div className="album py-5 bg-light">
-                        <div className="container">
-                            <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                                {filtered.map((video, index) => (
-                                    <div>
-                                        <VideoCards video={video}/>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
+                <div className="container">
+                    <div className="row">
+                        {
+                            filtered.map((video) => {
+                                    return (
+                                        <div className="col-md-6" >
+                                            <div className="card mb-4 shadow-sm" style={{background:"black",border:"#D43C31 solid",margin:'2px',padding:'2px'}}>
+
+
+                                                    <VideoCards video={video}/>
+
+                                            </div>
+                                        </div>
+                                    )
+                                }
+                            )
+                        }
+
                     </div>
                 </div>
             </div>
+
+
         </>
 
     );
