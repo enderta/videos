@@ -31,7 +31,7 @@ const Rating = (props) => {
             })
         window.location.reload();
     }
-    const handleDelete= (id) => {
+    const handleDelete = (id) => {
         fetch(`https://server-rpsh.onrender.com/videos/${id}`, {
             method: 'DELETE',
         })
@@ -45,13 +45,15 @@ const Rating = (props) => {
     return (
         <div>
             <div className="container">
-                <Button style={{margin:'10px'}} variant="danger" onClick={() => handleDelete(props.id.id)}>Delete</Button>
-                <Button style={{margin:'10px'}} variant="success" onClick={() => increaseRating(props.id.id)}>+</Button>
-                <span style={{color:"darkgoldenrod",margin:"10px"}}>
+                <Button style={{margin: '10px'}} variant="danger"
+                        onClick={() => handleDelete(props.id.id)}>Delete</Button>
+                <Button style={{margin: '10px'}} variant="success"
+                        onClick={() => increaseRating(props.id.id)}>+</Button>
+                <span style={{color: "darkgoldenrod", margin: "10px"}}>
                     {rating}
                 </span>
-                <Button style={{margin:'10px'}}  variant="danger" onClick={() => decreaseRating(props.id.id)}>-</Button>
-        </div>
+                <Button style={{margin: '10px'}} variant="danger" onClick={() => decreaseRating(props.id.id)}>-</Button>
+            </div>
         </div>
     );
 };
