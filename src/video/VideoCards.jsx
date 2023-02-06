@@ -12,7 +12,6 @@ const VideoCards = (props) => {
     return (
         <div>
             <div className="container">
-
                             <div className="card mb-4 shadow-sm" >
                              <div>
                                  <h6 style={{color:"#D43C31"}}>{props.video.title}</h6>
