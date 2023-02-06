@@ -1,9 +1,9 @@
 import React from "react";
 import Videos from "./video/Videos";
-
+import "./App.css";
 function App() {
   return (
-    <div className="App">
+    <div >
       <Videos />
     </div>
   );

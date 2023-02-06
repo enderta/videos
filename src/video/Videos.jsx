@@ -40,26 +40,37 @@ const Videos = () => {
 
 
     return (
-        <div style={{margin:"10px"}}>
-            <Container>
-                <Row>
-                    <Col>
-                        <h1 style={{textAlign:"center",color:"darkgreen"}}>Video List</h1>
-                    </Col>
-                    <Col>
-                        <Form.Control type="text" placeholder="Search" onChange={handleSearch}/>
-                    </Col>
-                    <Col>
-                        <NewVideo/>
-                    </Col>
-                </Row>
-            </Container>
-                    {filtered.map((video, index) => (
-                                <div>
-                                   <VideoCards video={video}/>
-                                </div>
-                    ))}
+        <>
+            <div style={{margin:"10px"}}>
+                <Container>
+                    <Row>
+                        <Col>
+                            <h1 style={{textAlign:"center",color:"darkgreen"}}>Video List</h1>
+                        </Col>
+                        <Col>
+                            <Form.Control type="text" placeholder="Search" onChange={handleSearch}/>
+                        </Col>
+                        <Col>
+                            <NewVideo/>
+                        </Col>
+                    </Row>
+                </Container>
+                <div className="container py-4" >
+                    <div className="album py-5 bg-light">
+                        <div className="container">
+                            <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                                {filtered.map((video, index) => (
+                                    <div>
+                                        <VideoCards video={video}/>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </>
+
     );
 };
 

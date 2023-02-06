@@ -1,5 +1,6 @@
 import React from 'react';
 import Rating from "./Rating.jsx";
+import Card from "react-bootstrap/Card";
 
 const VideoCards = (props) => {
 
@@ -11,25 +12,27 @@ const VideoCards = (props) => {
     console.log(src);
     return (
         <div>
-            <div className="container">
-                            <div className="card mb-4 shadow-sm" >
-                             <div>
-                                 <h6 style={{color:"#D43C31"}}>{props.video.title}</h6>
-                                 <span>
-
-                                     <Rating id={props.video}/>
-                                 </span>
-                             </div>
-
-                                <iframe
-                                     className="card-img-top" alt={props.video.Title}
-                                    src={src}
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowFullScreen
-                                    title="Embedded youtube"
-                                />
+            <div className="container py-4">
+                <div className="col">
+                    <div className="card shadow-sm">
+                        <iframe
+                            style={{"height": "500px", 'weihgt': "200px"}} className="card-img-top" alt={props.video.Title}
+                            src={src}
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                            title="Embedded youtube"
+                        />
+                        <div className="card-body">
+                            <p className="card-text">{props.video.title}</p>
+                            <div className="d-flex justify-content-between align-items-center">
+                                <div className="btn-group">
+                                    <Rating id={props.video}/>
+                                </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };
