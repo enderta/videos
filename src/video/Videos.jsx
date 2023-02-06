@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container, Form,Row,Col} from "react-bootstrap";
+import {Container, Form, Row, Col} from "react-bootstrap";
 import NewVideo from "./NewVideo.jsx";
 import VideoCards from "./VideoCards.jsx";
 
@@ -29,24 +29,20 @@ const Videos = () => {
 
     const handleSearch = (e) => {
         e.preventDefault();
-        if(e.target.value === ''){
+        if (e.target.value === '') {
             setFiltered(videos);
-        }else{
+        } else {
             setFiltered(videos.filter((video) => video.title.toLowerCase().includes(e.target.value.toLowerCase())).sort((a, b) => b.rating - a.rating));
         }
     }
-    //sort button function to sort the videos by rating
-
-
-
 
     return (
         <>
-            <div style={{margin:"10px"}}>
+            <div style={{margin: "10px"}}>
                 <Container>
                     <Row>
                         <Col>
-                            <h1 style={{textAlign:"center",color:"darkgreen"}}>Video List</h1>
+                            <h1 style={{textAlign: "center", color: "darkgreen"}}>Video List</h1>
                         </Col>
                         <Col>
                             <Form.Control type="text" placeholder="Search" onChange={handleSearch}/>
@@ -61,12 +57,14 @@ const Videos = () => {
                         {
                             filtered.map((video) => {
                                     return (
-                                        <div className="col-md-6" >
-                                            <div className="card mb-4 shadow-sm" style={{background:"black",border:"#D43C31 solid",margin:'2px',padding:'2px'}}>
-
-
-                                                    <VideoCards video={video}/>
-
+                                        <div className="col-md-6">
+                                            <div className="card mb-4 shadow-sm" style={{
+                                                background: "black",
+                                                border: "#D43C31 solid",
+                                                margin: '2px',
+                                                padding: '2px'
+                                            }}>
+                                                <VideoCards video={video}/>
                                             </div>
                                         </div>
                                     )
@@ -77,10 +75,7 @@ const Videos = () => {
                     </div>
                 </div>
             </div>
-
-
         </>
-
     );
 };
 
