@@ -22,7 +22,7 @@ const VideoCards = (props) => {
                     />
                 </div>
                 <div className="card-body">
-                    <p className="card-text">{props.video.title}</p>
+                    <h2 className="card-text">{props.video.title}</h2>
                     <div className="d-flex justify-content-between align-items-center">
                         <div className="btn-group">
                             <Rating id={props.video}/>

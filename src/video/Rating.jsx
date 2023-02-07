@@ -49,7 +49,7 @@ const Rating = (props) => {
                         onClick={() => handleDelete(props.id.id)}>Delete</Button>
                 <Button style={{margin: '10px'}} variant="success"
                         onClick={() => increaseRating(props.id.id)}>+</Button>
-                <span style={{color: "darkgoldenrod", margin: "10px"}}>
+                <span style={{color: "darkgreen", margin: "10px"}}>
                     {rating}
                 </span>
                 <Button style={{margin: '10px'}} variant="danger" onClick={() => decreaseRating(props.id.id)}>-</Button>
