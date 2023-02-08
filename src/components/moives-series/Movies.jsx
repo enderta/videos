@@ -5,7 +5,7 @@ const Movies = () => {
     const [movies, setMovies] = useState([]);
     const [searchValue, setSearchValue] = useState('matrix');
     const getMovieRequest = async (searchValue) => {
-        const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=9f4b46a`;
+        const url = `https://www.omdbapi.com/?s=${searchValue}&apikey=9f4b46a`;
 
         const response = await fetch(url);
         const responseJson = await response.json();
