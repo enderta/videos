@@ -1,10 +1,12 @@
 import React from "react";
 import Videos from "./components/video/Videos";
-import "./App.css";
+//import "./App.css";
+import Study from "./components/graphics/Study";
+import MoviesSeries from "./components/moives-series/MoviesSeries";
 function App() {
   return (
     <div >
-      <Videos />
+    <MoviesSeries />
     </div>
   );
 }
