@@ -1,5 +1,5 @@
 import React from "react";
-import Videos from "./video/Videos";
+import Videos from "./components/video/Videos";
 import "./App.css";
 function App() {
   return (
