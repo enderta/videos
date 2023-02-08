@@ -2,14 +2,14 @@ import React from 'react';
 import {Button} from "react-bootstrap";
 
 const Rating = (props) => {
-    const [rating, setRating] = React.useState(props.id.rating);
+
     const increaseRating = (id) => {
         fetch(`https://server-rpsh.onrender.com/videos/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({rating: rating + 1})
+            body: JSON.stringify({rating: props.id.rating + 1})
         })
             .then(res => res.json())
             .then(data => {
@@ -23,7 +23,7 @@ const Rating = (props) => {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({rating: rating - 1})
+            body: JSON.stringify({rating: props.id.rating - 1})
         })
             .then(res => res.json())
             .then(data => {
@@ -50,7 +50,7 @@ const Rating = (props) => {
                 <Button style={{margin: '10px'}} variant="success"
                         onClick={() => increaseRating(props.id.id)}>+</Button>
                 <span style={{color: "darkgreen", margin: "10px"}}>
-                    {rating}
+                    {props.id.rating}
                 </span>
                 <Button style={{margin: '10px'}} variant="danger" onClick={() => decreaseRating(props.id.id)}>-</Button>
             </div>
