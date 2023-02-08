@@ -2,7 +2,6 @@ import React from 'react';
 import {Button} from "react-bootstrap";
 
 const Rating = (props) => {
-
     const increaseRating = (id) => {
         fetch(`https://server-rpsh.onrender.com/videos/${id}`, {
             method: 'PUT',
