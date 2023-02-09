@@ -6,11 +6,12 @@ const Movies = () => {
     const [searchValue, setSearchValue] = useState('matrix');
     const getMovieRequest = async (searchValue) => {
       if(searchValue === '') {
-          const url = `https://www.omdbapi.com/?s=${searchValue}&apikey=9f4b46a`;
-
-          const response = await fetch(url);
-          const responseJson = await response.json();
-          setMovies(responseJson.Search);
+         fetch('https://www.omdbapi.com/?s=matrix&apikey=9f4b46a')
+                .then(response => response.json())
+                .then(data => {
+                    setMovies(data.Search.sort((a, b) => a.Year - b.Year));
+                }
+            );
       }
       else {
           const url = `https://www.omdbapi.com/?s=${searchValue}&apikey=9f4b46a`;
@@ -65,7 +66,7 @@ const Movies = () => {
                         <div className="col-md-4" key={index}>
                             <div className="card mb-4 shadow-sm"
                                  style={{background: "black", border: "#D43C31 solid", margin: '2px', padding: '2px'}}>
-                                <img src={movie.Poster} style={{"height": "500px", 'weihgt': "200px"}}
+                                <img src={movie.Poster} style={{height: "500px", width: "400px"}}
                                      className="card-img-top" alt={movie.Title}/>
                                 <div style={{color: "green"}} className="card-body">
                                     <p style={{color: "green"}} className="card-text">{movie.Title}</p>

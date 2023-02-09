@@ -61,8 +61,9 @@ const Series = () => {
                                 filtered.map((item) => {
                                         return (
                                             <div className="col-md-4" >
-                                                <div className="card mb-4 shadow-sm" style={{background:"black",border:"#D43C31 solid",margin:'2px',padding:'2px'}}>
-                                                    <img src={item.image.medium} style={{"height":"500px",'weihgt':"200px"}} className="card-img-top" alt="..."/>
+                                                <div className="card mb-4 shadow-sm"
+                                                     style={{background: "black", border: "#D43C31 solid", margin: '2px', padding: '2px'}}>
+                                                    <img src={item.image.medium} style={{height:"500px",width:"400px"}} className="card-img-top" alt="..."/>
                                                     <div className="card-body">
                                                         <h5  style={{color:"green"}} className="card-title">Name: {item.name}</h5>
                                                         <p style={{color:"green"}} className="card-text">Rating: {item.rating.average}</p>
