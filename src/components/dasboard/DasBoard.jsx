@@ -70,7 +70,6 @@ const DasBoard = () => {
                 </table>
             </div>
         </div>
-
     );
 };
 
