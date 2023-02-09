@@ -5,14 +5,24 @@ const Movies = () => {
     const [movies, setMovies] = useState([]);
     const [searchValue, setSearchValue] = useState('matrix');
     const getMovieRequest = async (searchValue) => {
-        const url = `https://www.omdbapi.com/?s=${searchValue}&apikey=9f4b46a`;
+      if(searchValue === '') {
+          const url = `https://www.omdbapi.com/?s=${searchValue}&apikey=9f4b46a`;
 
-        const response = await fetch(url);
-        const responseJson = await response.json();
+          const response = await fetch(url);
+          const responseJson = await response.json();
+          setMovies(responseJson.Search);
+      }
+      else {
+          const url = `https://www.omdbapi.com/?s=${searchValue}&apikey=9f4b46a`;
 
-        if (responseJson.Search) {
-            setMovies(responseJson.Search.sort((a, b) => a.Year - b.Year));
-        }
+          const response = await fetch(url);
+          const responseJson = await response.json();
+
+          if (responseJson.Search) {
+              setMovies(responseJson.Search.sort((a, b) => a.Year - b.Year));
+          }
+      }
+
     };
 
     useEffect(() => {
