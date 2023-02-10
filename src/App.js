@@ -4,10 +4,11 @@ import Videos from "./components/video/Videos";
 import Study from "./components/graphics/Study";
 import MoviesSeries from "./components/moives-series/MoviesSeries";
 import DasBoard from "./components/dasboard/DasBoard";
+import Gapi from "./components/dasboard/Gapi";
 function App() {
   return (
     <div >
-    <DasBoard/>
+    <Gapi/>
     </div>
   );
 }
