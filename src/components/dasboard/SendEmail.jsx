@@ -8,7 +8,7 @@ const SendEmail = () => {
     const [to, setTo] = React.useState('');
     const [subject, setSubject] = React.useState('');
     const [message, setMessage] = React.useState('');
-    const [error, setError] = React.useState('');
+
 
     const sendEmail = async (e) => {
         e.preventDefault();
@@ -18,16 +18,24 @@ const SendEmail = () => {
             subject,
             message
         };
-        const response = await fetch('http://localhost:5000/send', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        });
-        const content = await response.json();
-        console.log(content);
-        alert('Email sent successfully');
+        if (email === '' || to === '' || subject === '' || message === '') {
+            alert('Please fill all fields');
+        }else{
+            const response = await fetch('http://localhost:5000/send', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+            const content = await response.json();
+            console.log(content);
+          if(content.status === 'success'){
+              alert('Email sent successfully');
+        }else if(content.status === 'fail'){
+                alert('Email failed to send');
+          }
+        }
         window.location.reload();
 
     };
