@@ -28,15 +28,12 @@ const SendEmail = () => {
                 },
                 body: JSON.stringify(data)
             });
+            console.log(response)
             const content = await response.json();
             console.log(content);
-          if(content.status === 'success'){
-              alert('Email sent successfully');
-        }else if(content.status === 'fail'){
-                alert('Email failed to send');
-          }
-        }
+            alert('Email sent successfully');
         window.location.reload();
+        }
 
     };
     return (
