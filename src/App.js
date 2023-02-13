@@ -9,7 +9,7 @@ import SendEmail from "./components/dasboard/SendEmail";
 function App() {
   return (
     <div >
-    <SendEmail/>
+    <Study />
     </div>
   );
 }

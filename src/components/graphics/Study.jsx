@@ -2,16 +2,28 @@ import React from 'react';
 import ApexCharts from 'react-apexcharts';
 
 const Study = () => {
+    const [prod, setProd] = React.useState([]);
+
+
+    React.useEffect(() => {
+        fetch('http://localhost:3001/prod')
+            .then(response => response.json())
+            .then(data => {
+                setProd(data);
+                console.log(data);
+            });
+    }, []);
+
     const  state={
 
         series: [{
-            name: 'TEAM A',
-            type: 'area',
-            data: [44, 55, 31, 47, 31, 43, 26, 41, 31, 47, 33]
+           name:'price',
+            type: 'column',
+            data:prod.map((item)=>item.price)
         }, {
-            name: 'TEAM B',
+            name:'quantity',
             type: 'line',
-            data: [55, 69, 45, 61, 43, 54, 37, 52, 44, 61, 43]
+            data:prod.map((item)=>item.quantity)
         }],
         options: {
             chart: {
@@ -19,45 +31,36 @@ const Study = () => {
                 type: 'line',
             },
             stroke: {
-                curve: 'smooth'
+                width: [0, 4]
             },
-            fill: {
-                type:'solid',
-                opacity: [0.35, 1],
+            title: {
+                text: 'Traffic Sources'
             },
-            labels: ['Dec 01', 'Dec 02','Dec 03','Dec 04','Dec 05','Dec 06','Dec 07','Dec 08','Dec 09 ','Dec 10','Dec 11'],
-            markers: {
-                size: 0
+            dataLabels: {
+                enabled: true,
+                enabledOnSeries: [1]
             },
-            yaxis: [
-                {
-                    title: {
-                        text: 'Series A',
-                    },
+            labels: prod.map((item)=>item.name),
+            xaxis: {
+                type: 'category'
+            },
+            yaxis: [{
+                title: {
+                    text: 'Price',
                 },
-                {
-                    opposite: true,
-                    title: {
-                        text: 'Series B',
-                    },
-                },
-            ],
-            tooltip: {
-                shared: true,
-                intersect: false,
-                y: {
-                    formatter: function (y) {
-                        if(typeof y !== "undefined") {
-                            return  y.toFixed(0) + " points";
-                        }
-                        return y;
-                    }
+
+            }, {
+                opposite: true,
+                title: {
+                    text: 'Quantity'
                 }
-            }
+            }]
         },
 
 
     };
+
+
 
 
 
