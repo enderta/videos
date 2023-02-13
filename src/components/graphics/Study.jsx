@@ -34,7 +34,7 @@ const Study = () => {
                 width: [0, 4]
             },
             title: {
-                text: 'Traffic Sources'
+                text: 'Products Price and Quantity'
             },
             dataLabels: {
                 enabled: true,
