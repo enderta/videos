@@ -35,7 +35,6 @@ const SendEmail = () => {
        alert('Email sent successfully')
         window.location.reload();
         }
-
     };
     return (
         <div className="App">
