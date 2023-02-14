@@ -30,8 +30,13 @@ const SendEmail = () => {
             });
             console.log(response)
             const content = await response.json();
-            console.log(content);
+         if(content.event==="delivered"){
             alert('Email sent successfully');
+         }
+         else {
+            alert('Email not sent');
+         }
+
         window.location.reload();
         }
 
