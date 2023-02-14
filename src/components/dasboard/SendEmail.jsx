@@ -20,8 +20,9 @@ const SendEmail = () => {
         };
         if (email === '' || to === '' || subject === '' || message === '') {
             alert('Please fill all fields');
+            console.log(data)
         }else{
-            const response = await fetch('http://localhost:5000/send', {
+            const response = await fetch('http://localhost:3001/send', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -30,13 +31,8 @@ const SendEmail = () => {
             });
             console.log(response)
             const content = await response.json();
-         if(content.event==="delivered"){
-            alert('Email sent successfully');
-         }
-         else {
-            alert('Email not sent');
-         }
-
+            console.log(content)
+       alert('Email sent successfully')
         window.location.reload();
         }
 
