@@ -49,7 +49,7 @@ const DasBoard = () => {
                 </div>
             </header>
             <div className="container">
-               <table className="table" style={{color:'darkolivegreen',fontSize:'20px'}}>
+               <table className="table" style={{color:'darkolivegreen',fontSize:'20px' ,margin:'10px'}}>
                      <thead>
                             <tr>
                                 <th scope="col">Name</th>
@@ -72,8 +72,8 @@ const DasBoard = () => {
                         </tbody>
                 </table>
             </div>
-            <div className="container">
-                <div className="row">
+            <div className="container" >
+                <div className="row" style={{margin:'10px'}}>
                     <div className="col-12">
                         <div className="card">
                             <Study />
@@ -82,7 +82,7 @@ const DasBoard = () => {
                 </div>
             </div>
             <div className="container">
-                <div className="row">
+                <div className="row" style={{margin:'10px'}}>
                     <div className="col-12">
                         <div className="card">
                             <Sales />

@@ -66,7 +66,7 @@ const Study = () => {
 
 
 return (
-        <div>
+        <div >
         <ApexCharts  options={state.options} series={state.series} type="line" height={350} />
         </div>
     );

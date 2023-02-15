@@ -62,8 +62,8 @@ const Sales = () => {
 
 
 return (
-        <div>
-            <div id="chart" style={{background:"darkgoldenrod"}}>
+        <div >
+            <div id="chart">
                 <ApexCharts options={state.options} series={state.series} type="bar" height={350}  />
             </div>
 
