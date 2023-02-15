@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Gapi from "./Gapi";
 import Study from "../graphics/Study";
+import Sales from "../graphics/Sales";
 
 const DasBoard = () => {
     const [employees, setEmployees] = useState([]);
@@ -76,6 +77,15 @@ const DasBoard = () => {
                     <div className="col-12">
                         <div className="card">
                             <Study />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="container">
+                <div className="row">
+                    <div className="col-12">
+                        <div className="card">
+                            <Sales />
                         </div>
                     </div>
                 </div>
