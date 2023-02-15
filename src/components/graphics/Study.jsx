@@ -4,7 +4,6 @@ import ApexCharts from 'react-apexcharts';
 const Study = () => {
     const [prod, setProd] = React.useState([]);
 
-
     React.useEffect(() => {
         fetch('http://localhost:3001/prod')
             .then(response => response.json())
@@ -56,14 +55,7 @@ const Study = () => {
                 }
             }]
         },
-
-
     };
-
-
-
-
-
 
 return (
         <div >
