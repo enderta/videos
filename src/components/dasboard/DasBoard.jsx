@@ -4,6 +4,7 @@ import Study from "../graphics/Study";
 import Sales from "../graphics/Sales";
 import Rating from "../video/Rating";
 import Deps from "../graphics/Deps";
+import Budget from "../graphics/Budget";
 
 const DasBoard = () => {
     const [employees, setEmployees] = useState([]);
@@ -90,6 +91,9 @@ const DasBoard = () => {
                     </div>
                     <div className="col-6">
                         <Deps/>
+                    </div>
+                    <div className="col-6">
+                        <Budget/>
                     </div>
                 </div>
             </div>
