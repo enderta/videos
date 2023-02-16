@@ -26,6 +26,31 @@ const Budget = () => {
                 align: 'center'
             },
             labels: budget.map((item)=>item.department),
+            plotOptions: {
+                pie: {
+                    donut: {
+                        labels: {
+                            show: true,
+                            name: {
+                                show: true,
+                                fontSize: '22px',
+                                fontFamily: 'Helvetica, Arial, sans-serif',
+                                fontWeight: 600,
+                            },
+                            value: {
+                                show: true,
+                                fontSize: '16px',
+                                fontFamily: 'Helvetica, Arial, sans-serif',
+                                fontWeight: 400,
+                                color: undefined,
+                                formatter: function (val) {
+                                    return val
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             responsive: [{
                 breakpoint: 480,
                 options: {
@@ -43,7 +68,7 @@ const Budget = () => {
     return (
         <div >
             <div id="chart">
-                <ApexCharts options={state.options} series={state.series} type={"pie"} height={350}  />
+                <ApexCharts options={state.options} series={state.series} type={"donut"} height={350}  />
             </div>
         </div>
     );
