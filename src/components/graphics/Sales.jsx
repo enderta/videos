@@ -44,29 +44,20 @@ const Sales = () => {
                     }
                 }
             },
-
             dataLabels: {
                 enabled: true,
-
             },
             xaxis: {
                 categories: sales.map((item)=>item.name),
             }
         },
-
-
     };
-
-
-
-
 
 return (
         <div >
             <div id="chart">
                 <ApexCharts options={state.options} series={state.series} type="bar" height={350}  />
             </div>
-
         </div>
     );
 };

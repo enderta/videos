@@ -3,6 +3,7 @@ import Gapi from "./Gapi";
 import Study from "../graphics/Study";
 import Sales from "../graphics/Sales";
 import Rating from "../video/Rating";
+import Deps from "../graphics/Deps";
 
 const DasBoard = () => {
     const [employees, setEmployees] = useState([]);
@@ -80,6 +81,9 @@ const DasBoard = () => {
                     </div>
                     <div className="col-6">
                         <Sales/>
+                    </div>
+                    <div className="col-6">
+                        <Deps/>
                     </div>
                 </div>
             </div>
