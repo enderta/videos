@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import Gapi from "./Gapi";
 import Study from "../graphics/Study";
 import Sales from "../graphics/Sales";
+import Rating from "../video/Rating";
 
 const DasBoard = () => {
     const [employees, setEmployees] = useState([]);
@@ -72,21 +73,13 @@ const DasBoard = () => {
                         </tbody>
                 </table>
             </div>
-            <div className="container" >
-                <div className="row" style={{margin:'10px'}}>
-                    <div className="col-12">
-                        <div className="card">
-                            <Study />
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div className="container">
-                <div className="row" style={{margin:'10px'}}>
-                    <div className="col-12">
-                        <div className="card">
-                            <Sales />
-                        </div>
+                <div className="row">
+                    <div className="col-6">
+                        <Study/>
+                    </div>
+                    <div className="col-6">
+                        <Sales/>
                     </div>
                 </div>
             </div>
