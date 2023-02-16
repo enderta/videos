@@ -18,14 +18,20 @@ const DasBoard = () => {
             });
 
     }, []);
-
+    console.log(employees)
     const handleChange = (event) => {
         if(event.target.value === ''){
             setFiltered(employees);
         }else{
-            setFiltered(employees.filter((employee) => employee.name.toLowerCase().includes(event.target.value.toLowerCase())));
+            setFiltered(employees.filter((employee) => {
+                return (
+                    employee.name.toLowerCase().includes(event.target.value.toLowerCase()) ||
+                    employee.department.toLowerCase().includes(event.target.value.toLowerCase())
+                );
+            }));
         }
-    }
+    };
+
 
     return (
         <div>
