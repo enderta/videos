@@ -26,6 +26,21 @@ const Deps = () => {
                 align: 'center'
             },
             labels: deps.map((item)=>item.name),
+            plotOptions: {
+                pie: {
+                    donut: {
+                        labels: {
+                            show: true,
+                            name: {
+                                show: true,
+                                fontSize: '22px',
+                                fontFamily: 'Helvetica, Arial, sans-serif',
+                                fontWeight: 600,
+                            }
+                        }
+                    }
+                }
+            },
             responsive: [{
                 breakpoint: 480,
                 options: {

@@ -36,16 +36,6 @@ const Budget = () => {
                                 fontSize: '22px',
                                 fontFamily: 'Helvetica, Arial, sans-serif',
                                 fontWeight: 600,
-                            },
-                            value: {
-                                show: true,
-                                fontSize: '16px',
-                                fontFamily: 'Helvetica, Arial, sans-serif',
-                                fontWeight: 400,
-                                color: undefined,
-                                formatter: function (val) {
-                                    return val
-                                }
                             }
                         }
                     }
