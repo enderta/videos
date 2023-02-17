@@ -15,12 +15,15 @@ const Deps = () => {
     console.log(deps)
     const state={
         series: deps.map((item)=>Number(item.employees)),
+
         options: {
 
             chart: {
                 type: 'pie',
 
+
             },
+
             title: {
                 text: 'Employees by Department',
                 align: 'center'
@@ -28,7 +31,9 @@ const Deps = () => {
             labels: deps.map((item)=>item.name),
             plotOptions: {
                 pie: {
+
                     donut: {
+
                         labels: {
                             show: true,
                             name: {
