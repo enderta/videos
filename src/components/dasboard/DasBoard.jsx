@@ -38,7 +38,7 @@ const DasBoard = () => {
     };
 
     return (
-        <div>
+        <div >
             <header id='root' style={{margin: '10px'}}>
                 <div className="container">
                     <div
@@ -63,8 +63,8 @@ const DasBoard = () => {
                     </div>
                 </div>
             </header>
-            <div className="container">
-               <table className="table" style={{color:'darkolivegreen',fontSize:'20px' ,margin:'10px'}}>
+            <div className="container" >
+               <table className="table" style={{color:'darkolivegreen' ,margin:'10px'}}>
                      <thead>
                             <tr>
                                 <th scope="col">Name</th>
@@ -87,8 +87,8 @@ const DasBoard = () => {
                         </tbody>
                 </table>
             </div>
-            <div className="container">
-                <div className="row">
+            <div className="container" >
+                <div className="row" >
                     <div className="col-6">
                         <Study/>
                     </div>
