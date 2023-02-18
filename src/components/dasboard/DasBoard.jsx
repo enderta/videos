@@ -6,35 +6,35 @@ import Deps from "../graphics/Deps";
 import Budget from "../graphics/Budget";
 import AddEmp from "./AddEmp";
 import Button from "react-bootstrap/Button";
+import Page from "./Page";
+import Pagination from 'react-bootstrap/Pagination';
 
 const DasBoard = () => {
-    const [employees, setEmployees] = useState([]);
-    const [filtered, setFiltered] = useState(employees);
+
     const [show, setShow] = React.useState(false);
+    const [employees, setEmployees] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [totalPages, setTotalPages] = useState(1);
+    const [search, setSearch] = useState('');
+
+    useEffect(() => {
+        fetch(`http://localhost:3001/emps?page=${currentPage}&search=${search}`)
+            .then(response => response.json())
+            .then(data => {
+                setEmployees(data.data);
+                setCurrentPage(data.currentPage);
+                setTotalPages(data.totalPages);
+            }
+        );
+    }, [currentPage, search]);
+
 
     const handleShow = () => setShow(true);
     const handleClose = () => setShow(false);
-
-    useEffect(()=>{
-        fetch('http://localhost:3001/emps')
-            .then(response => response.json())
-            .then(data => {
-                setEmployees(data);
-                setFiltered(data);
-            });
-    }, []);
-    console.log(employees)
-    const handleChange = (event) => {
-        if(event.target.value === ''){
-            setFiltered(employees);
-        }else{
-            setFiltered(employees.filter((employee) => {
-                return (
-                    employee.name.toLowerCase().includes(event.target.value.toLowerCase()) ||
-                    employee.department.toLowerCase().includes(event.target.value.toLowerCase())
-                );
-            }));
-        }
+    const handleSearch = (event) => {
+        const { value } = event.target;
+        setSearch(value);
+        setCurrentPage(1);
     };
 
     return (
@@ -55,37 +55,46 @@ const DasBoard = () => {
                             <input
                                 type="search"
                                 className="form-control form-control-dark"
-                                placeholder="Search..."
+                                placeholder="Search Employees..."
                                 aria-label="Search"
-                                onChange={handleChange}
+                                onChange={handleSearch}
                             />
                         </form>
                     </div>
                 </div>
             </header>
             <div className="container" >
-               <table className="table" style={{color:'darkolivegreen' ,margin:'10px'}}>
-                     <thead>
-                            <tr>
-                                <th scope="col">Name</th>
-                                <th scope="col">Department</th>
-                                <th scope="col">Salary</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {
-                                filtered.map((employee, index) => {
-                                    return (
-                                        <tr key={index}>
-                                            <td>{employee.name}</td>
-                                            <td>{employee.department}</td>
-                                            <td>{employee.salary}</td>
-                                        </tr>
-                                    );
-                                })
-                            }
-                        </tbody>
+                <table className="table" style={{color:'darkolivegreen' ,margin:'10px'}}>
+                    <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Department</th>
+                        <th scope="col">Salary</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {
+                        employees.map((employee, index) => {
+                            return (
+                                <tr key={index}>
+                                    <td>{employee.name}</td>
+                                    <td>{employee.department}</td>
+                                    <td>{employee.salary}</td>
+                                </tr>
+                            );
+                        })
+                    }
+                    </tbody>
                 </table>
+             <Pagination>
+                <Pagination.First onClick={()=>{setCurrentPage(1)}} />
+                <Pagination.Prev onClick={()=>{setCurrentPage(currentPage-1)}} />
+                <Pagination.Item>{currentPage}</Pagination.Item>
+                <Pagination.Next onClick={()=>{setCurrentPage(currentPage+1)}} />
+                <Pagination.Last onClick={()=>{setCurrentPage(totalPages)}} />
+
+            </Pagination>
+
             </div>
             <div className="container" >
                 <div className="row" >
