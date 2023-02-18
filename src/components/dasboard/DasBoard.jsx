@@ -9,7 +9,6 @@ import Button from "react-bootstrap/Button";
 import Pagination from 'react-bootstrap/Pagination';
 
 const DasBoard = () => {
-
     const [show, setShow] = React.useState(false);
     const [employees, setEmployees] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
@@ -91,7 +90,6 @@ const DasBoard = () => {
                 <Pagination.Next onClick={()=>{setCurrentPage(currentPage+1)}} />
                 <Pagination.Last onClick={()=>{setCurrentPage(totalPages)}} />
             </Pagination>
-
             </div>
             <div className="container" >
                 <div className="row" >
