@@ -87,7 +87,6 @@ const AddEmp = (props) => {
                             <Button variant="primary" type="submit">
                                 Submit
                             </Button>
-
                         </Form>
                     </Modal.Body>
                 </Modal>
