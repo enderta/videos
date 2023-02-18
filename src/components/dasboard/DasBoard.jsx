@@ -2,17 +2,15 @@ import React, {useEffect, useState} from 'react';
 import Gapi from "./Gapi";
 import Study from "../graphics/Study";
 import Sales from "../graphics/Sales";
-import Rating from "../video/Rating";
 import Deps from "../graphics/Deps";
 import Budget from "../graphics/Budget";
 import AddEmp from "./AddEmp";
-import {Modal} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 
 const DasBoard = () => {
     const [employees, setEmployees] = useState([]);
     const [filtered, setFiltered] = useState(employees);
-    const [show, setShow] = useState(false);
+    const [show, setShow] = React.useState(false);
 
     const handleShow = () => setShow(true);
     const handleClose = () => setShow(false);
@@ -24,7 +22,6 @@ const DasBoard = () => {
                 setEmployees(data);
                 setFiltered(data);
             });
-
     }, []);
     console.log(employees)
     const handleChange = (event) => {

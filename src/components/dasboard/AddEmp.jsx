@@ -54,7 +54,7 @@ const AddEmp = (props) => {
     return (
         <div>
             <div className={'container'}>
-                <Modal show={props.show} onHide={props.handleClose}   >
+                <Modal show={props.show} onHide={props.onHide}   >
                     <Modal.Header closeButton>
                         <Modal.Title>Add Car</Modal.Title>
                     </Modal.Header>
@@ -87,6 +87,7 @@ const AddEmp = (props) => {
                             <Button variant="primary" type="submit">
                                 Submit
                             </Button>
+
                         </Form>
                     </Modal.Body>
                 </Modal>
