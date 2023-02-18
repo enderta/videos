@@ -6,7 +6,6 @@ import Deps from "../graphics/Deps";
 import Budget from "../graphics/Budget";
 import AddEmp from "./AddEmp";
 import Button from "react-bootstrap/Button";
-import Page from "./Page";
 import Pagination from 'react-bootstrap/Pagination';
 
 const DasBoard = () => {
@@ -27,7 +26,6 @@ const DasBoard = () => {
             }
         );
     }, [currentPage, search]);
-
 
     const handleShow = () => setShow(true);
     const handleClose = () => setShow(false);
@@ -86,13 +84,12 @@ const DasBoard = () => {
                     }
                     </tbody>
                 </table>
-             <Pagination>
-                <Pagination.First onClick={()=>{setCurrentPage(1)}} />
+             <Pagination >
+                <Pagination.First style={{color:'yellow'}} onClick={()=>{setCurrentPage(1)}} />
                 <Pagination.Prev onClick={()=>{setCurrentPage(currentPage-1)}} />
                 <Pagination.Item>{currentPage}</Pagination.Item>
                 <Pagination.Next onClick={()=>{setCurrentPage(currentPage+1)}} />
                 <Pagination.Last onClick={()=>{setCurrentPage(totalPages)}} />
-
             </Pagination>
 
             </div>
