@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import Gapi from "./Gapi";
 import Study from "../graphics/Study";
 import Sales from "../graphics/Sales";
 import Deps from "../graphics/Deps";
@@ -33,6 +32,7 @@ const DasBoard = () => {
         setSearch(value);
         setCurrentPage(1);
     };
+
 
     return (
         <div >
@@ -83,10 +83,10 @@ const DasBoard = () => {
                     }
                     </tbody>
                 </table>
-             <Pagination >
-                <Pagination.First style={{color:'yellow'}} onClick={()=>{setCurrentPage(1)}} />
+             <Pagination className={'pagination'} >
+                <Pagination.First  onClick={()=>{setCurrentPage(1)}} />
                 <Pagination.Prev onClick={()=>{setCurrentPage(currentPage-1)}} />
-                <Pagination.Item>{currentPage}</Pagination.Item>
+                <Pagination.Item >{currentPage}</Pagination.Item>
                 <Pagination.Next onClick={()=>{setCurrentPage(currentPage+1)}} />
                 <Pagination.Last onClick={()=>{setCurrentPage(totalPages)}} />
             </Pagination>
