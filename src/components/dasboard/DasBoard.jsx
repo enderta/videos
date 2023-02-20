@@ -84,11 +84,23 @@ const DasBoard = () => {
                     </tbody>
                 </table>
              <Pagination className={'pagination'} >
-                <Pagination.First  onClick={()=>{setCurrentPage(1)}} />
-                <Pagination.Prev onClick={()=>{setCurrentPage(currentPage-1)}} />
+                <Pagination.First  onClick={()=>{setCurrentPage(1)}}
+                disabled={
+                    currentPage === 1
+                }/>
+                <Pagination.Prev onClick={()=>{setCurrentPage(currentPage-1)}}
+                disabled={
+                    currentPage === 1
+                }/>
                 <Pagination.Item >{currentPage}</Pagination.Item>
-                <Pagination.Next onClick={()=>{setCurrentPage(currentPage+1)}} />
-                <Pagination.Last onClick={()=>{setCurrentPage(totalPages)}} />
+                <Pagination.Next onClick={()=>{setCurrentPage(currentPage+1)}}
+                disabled={
+                    currentPage === totalPages
+                }/>
+                <Pagination.Last onClick={()=>{setCurrentPage(totalPages)}}
+                disabled={
+                    currentPage === totalPages
+                }/>
             </Pagination>
             </div>
             <div className="container" >
