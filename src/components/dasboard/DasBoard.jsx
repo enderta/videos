@@ -33,7 +33,6 @@ const DasBoard = () => {
         setCurrentPage(1);
     };
 
-
     return (
         <div >
             <header id='root' style={{margin: '10px'}}>
