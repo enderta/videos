@@ -18,33 +18,33 @@ const DasBoard = () => {
         fetch(`http://localhost:3001/emps?page=${currentPage}&search=${search}`)
             .then(response => response.json())
             .then(data => {
-                setEmployees(data.data);
-                setCurrentPage(data.currentPage);
-                setTotalPages(data.totalPages);
-            }
-        );
+                    setEmployees(data.data);
+                    setCurrentPage(data.currentPage);
+                    setTotalPages(data.totalPages);
+                }
+            );
     }, [currentPage, search]);
 
     const handleShow = () => setShow(true);
     const handleClose = () => setShow(false);
     const handleSearch = (event) => {
-        const { value } = event.target;
+        const {value} = event.target;
         setSearch(value);
         setCurrentPage(1);
     };
 
     return (
-        <div >
+        <div>
             <header id='root' style={{margin: '10px'}}>
                 <div className="container">
                     <div
                         className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                         <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                             <li>
-                               <Button variant="outline-info" onClick={handleShow}>
-                                   Add
-                                 </Button>
-                                        <AddEmp show={show} onHide={handleClose}/>
+                                <Button variant="outline-info" onClick={handleShow}>
+                                    Add
+                                </Button>
+                                <AddEmp show={show} onHide={handleClose}/>
                             </li>
                         </ul>
                         <form className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
@@ -59,8 +59,8 @@ const DasBoard = () => {
                     </div>
                 </div>
             </header>
-            <div className="container" >
-                <table className="table" style={{color:'darkolivegreen' ,margin:'10px'}}>
+            <div className="container">
+                <table className="table" style={{color: 'darkolivegreen', margin: '10px'}}>
                     <thead>
                     <tr>
                         <th scope="col">Name</th>
@@ -82,28 +82,36 @@ const DasBoard = () => {
                     }
                     </tbody>
                 </table>
-             <Pagination className={'pagination'} >
-                <Pagination.First  onClick={()=>{setCurrentPage(1)}}
-                disabled={
-                    currentPage === 1
-                }/>
-                <Pagination.Prev onClick={()=>{setCurrentPage(currentPage-1)}}
-                disabled={
-                    currentPage === 1
-                }/>
-                <Pagination.Item >{currentPage}</Pagination.Item>
-                <Pagination.Next onClick={()=>{setCurrentPage(currentPage+1)}}
-                disabled={
-                    currentPage === totalPages
-                }/>
-                <Pagination.Last onClick={()=>{setCurrentPage(totalPages)}}
-                disabled={
-                    currentPage === totalPages
-                }/>
-            </Pagination>
+                <Pagination className={'pagination'}>
+                    <Pagination.First onClick={() => {
+                        setCurrentPage(1)
+                    }}
+                                      disabled={
+                                          currentPage === 1
+                                      }/>
+                    <Pagination.Prev onClick={() => {
+                        setCurrentPage(currentPage - 1)
+                    }}
+                                     disabled={
+                                         currentPage === 1
+                                     }/>
+                    <Pagination.Item>{currentPage}</Pagination.Item>
+                    <Pagination.Next onClick={() => {
+                        setCurrentPage(currentPage + 1)
+                    }}
+                                     disabled={
+                                         currentPage === totalPages
+                                     }/>
+                    <Pagination.Last onClick={() => {
+                        setCurrentPage(totalPages)
+                    }}
+                                     disabled={
+                                         currentPage === totalPages
+                                     }/>
+                </Pagination>
             </div>
-            <div className="container" >
-                <div className="row" >
+            <div className="container">
+                <div className="row">
                     <div className="col-6">
                         <Study/>
                     </div>

@@ -54,7 +54,7 @@ const AddEmp = (props) => {
     return (
         <div>
             <div className={'container'}>
-                <Modal show={props.show} onHide={props.onHide}   >
+                <Modal show={props.show} onHide={props.onHide}>
                     <Modal.Header closeButton>
                         <Modal.Title>Add Car</Modal.Title>
                     </Modal.Header>
@@ -63,25 +63,25 @@ const AddEmp = (props) => {
                             <Form.Group controlId="formBasicEmail">
                                 <Form.Label>Name</Form.Label>
                                 <Form.Control type="text" placeholder="Enter name" name={'name'} value={name}
-                                                onChange={handleChanges}/>
+                                              onChange={handleChanges}/>
                             </Form.Group>
                             <Form.Group controlId="formBasicEmail">
                                 <Form.Label>Email</Form.Label>
                                 <Form.Control type="email" placeholder="Enter email" name={'email'} value={email}
-                                                onChange={handleChanges}/>
+                                              onChange={handleChanges}/>
                             </Form.Group>
                             <Form.Group controlId="formBasicEmail">
                                 <Form.Label>Salary</Form.Label>
                                 <Form.Control type="number" placeholder="Enter salary" name={'salary'} value={salary}
-                                                onChange={handleChanges}/>
+                                              onChange={handleChanges}/>
                             </Form.Group>
                             <Form.Group controlId="formBasicEmail">
                                 <Form.Label>Department</Form.Label>
-                               <select name="cars" onChange={handleSelect}>
-                                      <option value='1' name={'Sales'}>Sales</option>
-                                        <option value="2" name={'Marketing'}>Marketing</option>
-                                        <option value="3" name={'Engineering'}>Engineering</option>
-                                        <option value="4" name={'IT'}>IT</option>
+                                <select name="cars" onChange={handleSelect}>
+                                    <option value='1' name={'Sales'}>Sales</option>
+                                    <option value="2" name={'Marketing'}>Marketing</option>
+                                    <option value="3" name={'Engineering'}>Engineering</option>
+                                    <option value="4" name={'IT'}>IT</option>
                                 </select>
                             </Form.Group>
                             <Button variant="primary" type="submit">
