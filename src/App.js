@@ -8,7 +8,7 @@ import Gapi from "./components/dasboard/Gapi";
 import SendEmail from "./components/dasboard/SendEmail";
 function App() {
   return (
-    <div >
+    <div>
   <DasBoard/>
 
     </div>
