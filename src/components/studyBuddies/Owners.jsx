@@ -37,7 +37,7 @@ const Owners = (props) => {
         setSearch(value);
         setCurrentPage(1);
     };
-    console.log(owners)
+
     return (
         <div>
             <h1 style={{color: "yellow", textAlign: "center"}}>List of Trainees</h1>
