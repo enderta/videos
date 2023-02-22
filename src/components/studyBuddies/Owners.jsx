@@ -15,17 +15,7 @@ const Owners = (props) => {
 
 
 
-    function handleDailyFilter() {
-        setFilter('daily');
-    }
 
-    function handleWeeklyFilter() {
-        setFilter('weekly');
-    }
-
-    function handleMonthlyFilter() {
-        setFilter('monthly');
-    }
 
     React.useEffect(() => {
         fetch(`http://localhost:3001/availabilities?page=${currentPage}&search=${search}&filter=${filter}`,
@@ -54,6 +44,20 @@ const Owners = (props) => {
         setSearch(value);
         setCurrentPage(1);
     };
+    function handleDailyFilter() {
+        setFilter('daily');
+        setCurrentPage(1);
+    }
+
+    function handleWeeklyFilter() {
+        setFilter('weekly');
+        setCurrentPage(1);
+    }
+
+    function handleMonthlyFilter() {
+        setFilter('monthly');
+        setCurrentPage(1);
+    }
 
     return (
         <div>
