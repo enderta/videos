@@ -1,7 +1,9 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Owner from "./Owner";
 import {Link} from "react-router-dom";
 import Pagination from "react-bootstrap/Pagination";
+import {FiLink} from "react-icons/all";
+import FilterDwm from "./FilterDWM";
 
 const Owners = (props) => {
 
@@ -9,8 +11,24 @@ const Owners = (props) => {
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
     const [search, setSearch] = useState('');
+    const [filter, setFilter] = useState('daily');
+
+
+
+    function handleDailyFilter() {
+        setFilter('daily');
+    }
+
+    function handleWeeklyFilter() {
+        setFilter('weekly');
+    }
+
+    function handleMonthlyFilter() {
+        setFilter('monthly');
+    }
+
     React.useEffect(() => {
-        fetch(`http://localhost:3001/availabilities?page=${currentPage}&search=${search}`,
+        fetch(`http://localhost:3001/availabilities?page=${currentPage}&search=${search}&filter=${filter}`,
             {
                 method: 'GET',
                 headers: {
@@ -21,13 +39,12 @@ const Owners = (props) => {
             })
             .then(response => response.json())
             .then(data => {
-                    setOwners(data.data);
+                setOwners(data.data);
                 setCurrentPage(data.currentPage);
                 setTotalPages(data.totalPages);
-                }
-            );
-    }, [currentPage, search]);
-    console.log(localStorage)
+            });
+    }, [currentPage, search, filter]);
+    console.log(owners)
     const handleLogout = () => {
         localStorage.removeItem('token');
         window.location.href = 'http://localhost:3000';
@@ -46,7 +63,13 @@ const Owners = (props) => {
                     <div className="col-md-6">
                         <input type="text" className="form-control" placeholder="Search" value={search}
                                  onChange={handleSearch}/>
+
                     </div>
+
+                    <button onClick={handleDailyFilter}>Daily</button>
+                <button onClick={handleWeeklyFilter}>Weekly</button>
+                <button onClick={handleMonthlyFilter}>Monthly</button>
+
                 </div>
             </div>
             <div>

@@ -1,8 +1,4 @@
 import React from 'react';
-import Cars from "./Cars";
-import AddCars from "./AddCars";
-import CreateOwner from "./CreateOwner";
-import owners from "./Owners";
 
 const Owner = (props) => {
     const [email, setEmail] = React.useState(localStorage.getItem('email'));
