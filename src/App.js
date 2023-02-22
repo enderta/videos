@@ -6,10 +6,11 @@ import MoviesSeries from "./components/moives-series/MoviesSeries";
 import DasBoard from "./components/dasboard/DasBoard";
 import Gapi from "./components/dasboard/Gapi";
 import SendEmail from "./components/dasboard/SendEmail";
+import Pages from "./components/studyBuddies/Pages";
 function App() {
   return (
     <div>
-  <DasBoard/>
+  <Pages  />
 
     </div>
   );
