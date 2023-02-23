@@ -1,4 +1,6 @@
 import React from 'react';
+import {Form} from "react-bootstrap";
+import Button from "react-bootstrap/Button";
 
 const Register = () => {
     const [name, setFirstName] = React.useState('');
@@ -44,17 +46,29 @@ const Register = () => {
 
     return (
         <div>
-            <form>
-                <div className="form-group">
-                    <label htmlFor="firstName">First Name</label>
-                    <input type="text" className="form-control" id="firstName" name="firstName" onChange={handleChange} placeholder="Enter first name" />
-                    <label htmlFor="email">Email address</label>
-                    <input type="email" className="form-control" id="email" name="email" onChange={handleChange} placeholder="Enter email" />
-                    <input type="password" className="form-control" id="password" name="password" onChange={handleChange} placeholder="Password" />
-                    <button type="submit" className="btn btn-outline-info" onClick={register}>Register</button>
+           <div className="container">
+                <div className="row">
+                    <div className="col-md-6 mt-5 mx-auto">
+                        <Form style={{ width: '50%', margin: 'auto' }}>
+                            <Form.Group controlId="formBasicEmail">
+                                <Form.Label>First Name</Form.Label>
+                                <Form.Control type="text" placeholder="Enter First Name" name="firstName" onChange={handleChange} />
+                            </Form.Group>
+                            <Form.Group controlId="formBasicEmail">
+                                <Form.Label>Email address</Form.Label>
+                                <Form.Control type="email" placeholder="Enter email" name="email" onChange={handleChange} />
+                            </Form.Group>
+                            <Form.Group controlId="formBasicPassword">
+                                <Form.Label>Password</Form.Label>
+                                <Form.Control type="password" placeholder="Password" name="password" onChange={handleChange} />
+                            </Form.Group>
+                            <Button variant="outline-success" style={{margin:'10px'}} type="submit" onClick={register}>
+                                Register
+                            </Button>
+                        </Form>
+                    </div>
                 </div>
-            </form>
-
+           </div>
         </div>
     );
 };

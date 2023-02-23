@@ -1,4 +1,6 @@
 import React from 'react';
+import {Form} from "react-bootstrap";
+import Button from "react-bootstrap/Button";
 
 const Login = () => {
     const [email, setEmail] = React.useState('');
@@ -41,15 +43,25 @@ const Login = () => {
     console.log(localStorage)
     return (
         <div>
-            <form>
-                <div className="form-group">
-                    <label htmlFor="email">Email address</label>
-                    <input type="email" className="form-control" id="email" name="email" onChange={handleEmail} placeholder="Enter email" />
-                    <input type="password" className="form-control" id="password" name="password" onChange={handlePassword} placeholder="Password" />
-                    <button type="submit" className="btn btn-outline-info" onClick={login}>Login</button>
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-6 mt-5 mx-auto">
+                        <Form style={{ width: '50%', margin: 'auto' }}>
+                            <Form.Group controlId="formBasicEmail">
+                                <Form.Label>Email address</Form.Label>
+                                <Form.Control type="email" placeholder="Enter email" name="email" onChange={handleEmail} />
+                            </Form.Group>
+                            <Form.Group controlId="formBasicPassword">
+                                <Form.Label>Password</Form.Label>
+                                <Form.Control type="password" placeholder="Password" name="password" onChange={handlePassword} />
+                            </Form.Group>
+                            <Button variant="outline-success" style={{margin:'10px'}} type="submit" onClick={login}>
+                                Login
+                            </Button>
+                        </Form>
+                    </div>
                 </div>
-
-            </form>
+            </div>
         </div>
     );
 };
