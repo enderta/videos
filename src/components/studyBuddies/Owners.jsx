@@ -2,8 +2,7 @@ import React, {useEffect, useState} from 'react';
 import Owner from "./Owner";
 import {Link} from "react-router-dom";
 import Pagination from "react-bootstrap/Pagination";
-import {FiLink} from "react-icons/all";
-import FilterDwm from "./FilterDWM";
+import Button from "react-bootstrap/Button";
 
 const Owners = (props) => {
 
@@ -12,10 +11,6 @@ const Owners = (props) => {
     const [totalPages, setTotalPages] = useState(1);
     const [search, setSearch] = useState('');
     const [filter, setFilter] = useState('daily');
-
-
-
-
 
     React.useEffect(() => {
         fetch(`http://localhost:3001/availabilities?page=${currentPage}&search=${search}&filter=${filter}`,
@@ -34,7 +29,7 @@ const Owners = (props) => {
                 setTotalPages(data.totalPages);
             });
     }, [currentPage, search, filter]);
-    console.log(owners)
+
     const handleLogout = () => {
         localStorage.removeItem('token');
         window.location.href = 'http://localhost:3000';
@@ -44,19 +39,17 @@ const Owners = (props) => {
         setSearch(value);
         setCurrentPage(1);
     };
+
     function handleDailyFilter() {
         setFilter('daily');
-        setCurrentPage(1);
     }
 
     function handleWeeklyFilter() {
         setFilter('weekly');
-        setCurrentPage(1);
     }
 
     function handleMonthlyFilter() {
         setFilter('monthly');
-        setCurrentPage(1);
     }
 
     return (
@@ -66,23 +59,28 @@ const Owners = (props) => {
                 <div className="row">
                     <div className="col-md-6">
                         <input type="text" className="form-control" placeholder="Search" value={search}
-                                 onChange={handleSearch}/>
-
+                               onChange={handleSearch}/>
                     </div>
-
-                    <button onClick={handleDailyFilter}>Daily</button>
-                <button onClick={handleWeeklyFilter}>Weekly</button>
-                <button onClick={handleMonthlyFilter}>Monthly</button>
-
+                       <div className="col-md-6">
+                        <div className="btn-group" role="group" aria-label="Basic example">
+                            <button type="button" className="btn btn-outline-info" onClick={handleDailyFilter}>Daily</button>
+                            <button type="button" className="btn btn-outline-info" onClick={handleWeeklyFilter}>Weekly</button>
+                            <button type="button" className="btn btn-outline-info" onClick={handleMonthlyFilter}>Monthly</button>
+                        </div>
+                       </div>
                 </div>
             </div>
             <div>
                   <span>
-                <button onClick={handleLogout} className="btn btn-outline-info"
-                        style={{float: "right", margin: "10px"}}>Logout</button>
-                      <button className="btn btn-outline-info">
-                         <Link to='/availability' style={{float: "left", margin: "10px",textDecoration:'none'}}>Add Availability</Link>
+               <div className="col-md-6">
+                    <div className="btn-group" role="group" aria-label="Basic example">
+                    <button onClick={handleLogout} className="btn btn-outline-info"
+                            style={{float: "right", margin: "10px"}}>Logout</button>
+                      <button className="btn btn-outline-info" style={{float: "right", margin: "10px"}}>
+                            <Link to='/availability' style={{textDecoration:"none"}}  >Add Availability</Link>
                       </button>
+                    </div>
+               </div>
             </span>
             </div>
             <div className="container">

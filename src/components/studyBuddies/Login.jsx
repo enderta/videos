@@ -46,7 +46,7 @@ const Login = () => {
                     <label htmlFor="email">Email address</label>
                     <input type="email" className="form-control" id="email" name="email" onChange={handleEmail} placeholder="Enter email" />
                     <input type="password" className="form-control" id="password" name="password" onChange={handlePassword} placeholder="Password" />
-                    <button type="submit" className="btn btn-outline-primary" onClick={login}>Login</button>
+                    <button type="submit" className="btn btn-outline-info" onClick={login}>Login</button>
                 </div>
 
             </form>

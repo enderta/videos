@@ -52,7 +52,7 @@ const Owner = (props) => {
             <tr>
             <td>{props.owner.name}</td>
             <td>
-                <button className="btn btn-primary" onClick={sendEmail}>Send Email</button>
+                <button className="btn btn-outline-info" onClick={sendEmail}>Send Email</button>
             </td>
             <td>{new Date(props.owner.availability_date).toLocaleDateString()}</td>
             <td>{props.owner.topic}</td>

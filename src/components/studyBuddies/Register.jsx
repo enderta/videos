@@ -51,7 +51,7 @@ const Register = () => {
                     <label htmlFor="email">Email address</label>
                     <input type="email" className="form-control" id="email" name="email" onChange={handleChange} placeholder="Enter email" />
                     <input type="password" className="form-control" id="password" name="password" onChange={handleChange} placeholder="Password" />
-                    <button type="submit" className="btn btn-outline-primary" onClick={register}>Register</button>
+                    <button type="submit" className="btn btn-outline-info" onClick={register}>Register</button>
                 </div>
             </form>
 
