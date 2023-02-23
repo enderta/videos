@@ -6,7 +6,6 @@ const Register = () => {
     const [name, setFirstName] = React.useState('');
     const [email, setEmail] = React.useState('');
     const [password, setPassword] = React.useState('');
-    const [err, setErr] = React.useState(false);
     const handleChange = (e) => {
         if (e.target.name === 'firstName') {
             setFirstName(e.target.value);
@@ -38,7 +37,8 @@ const Register = () => {
                     window.location.href = '/login';
                 }
                 else {
-                    window.location.href = '/login';
+                    alert("This email is already registered")
+                    window.location.reload();
                 }
             })
             .catch(err => console.log(err))
@@ -72,7 +72,6 @@ const Register = () => {
                             <Button variant="outline-success" style={{margin:'10px'}} type="submit" onClick={handleBack}>
                                 Back
                             </Button>
-
                         </Form>
                     </div>
                 </div>
