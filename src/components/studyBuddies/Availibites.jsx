@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import Owner from "./Owner";
+import AvailibityTable from "./AvailibityTable";
 import {Link} from "react-router-dom";
 import Pagination from "react-bootstrap/Pagination";
 import Button from "react-bootstrap/Button";
 import LogOut from "./LogOut";
 
-const Owners = (props) => {
+const Availibites = (props) => {
 
     const [owners, setOwners] = React.useState([]);
     const [currentPage, setCurrentPage] = useState(1);
@@ -96,7 +96,7 @@ const Owners = (props) => {
                     </thead>
                     <tbody>
                     {owners.map(owner =>
-                        <Owner key={owner.id} owner={owner} owners={owners} setOwners={setOwners}/>)
+                        <AvailibityTable key={owner.id} owner={owner} owners={owners} setOwners={setOwners}/>)
                     }
                     <Pagination className={'pagination'}>
                         <Pagination.First onClick={() => {
@@ -133,4 +133,4 @@ const Owners = (props) => {
     );
 };
 
-export default Owners;
+export default Availibites;

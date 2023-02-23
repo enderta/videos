@@ -1,10 +1,7 @@
 import React from 'react';
-import {Form, FormGroup, Modal} from "react-bootstrap";
-import Cars from "./Cars";
-import Owners from "./Owners";
 import {Link} from "react-router-dom";
 
-const LoginReg = () => {
+const LandingPage = () => {
     const [email, setEmail] = React.useState('');
     const [password, setPassword] = React.useState('');
     const [err, setErr] = React.useState(false);
@@ -126,4 +123,4 @@ const LoginReg = () => {
     );
 };
 
-export default LoginReg;
+export default LandingPage;

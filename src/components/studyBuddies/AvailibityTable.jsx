@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Owner = (props) => {
+const AvailibityTable = (props) => {
     const [email, setEmail] = React.useState(localStorage.getItem('email'));
     const [to, setTo] = React.useState(props.owner.email);
     const [subject, setSubject] = React.useState("Study Buddy");
@@ -33,19 +33,6 @@ const Owner = (props) => {
         }
 
     };
-    const handleDelete = (id) => {
-        fetch(`http://localhost:3001/availability/${id}`, {
-            method: 'DELETE',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': localStorage.getItem('token')
-            }
-        }).then(res => res.json())
-            .then(data => {
-
-            })
-        window.location.reload();
-    }
 
     return (
 
@@ -63,4 +50,4 @@ const Owner = (props) => {
     );
 };
 
-export default Owner;
+export default AvailibityTable;

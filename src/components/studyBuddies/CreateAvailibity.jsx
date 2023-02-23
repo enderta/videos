@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import {Modal, ModalBody} from "react-bootstrap";
 
-const CreateOwner = (props) => {
+const CreateAvailibity = (props) => {
     const [date, setDate] = React.useState(new Date());
     const [topic, setTopic] = React.useState('');
     let id=localStorage.getItem('id')
@@ -58,4 +58,4 @@ const handleSubmit = (event) => {
     );
 };
 
-export default CreateOwner;
+export default CreateAvailibity;
