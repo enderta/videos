@@ -21,7 +21,6 @@ const Availibites = (props) => {
                     'Content-Type': 'application/json',
                     'Authorization': localStorage.getItem('token')
                 }
-
             })
             .then(response => response.json())
             .then(data => {
@@ -31,10 +30,6 @@ const Availibites = (props) => {
             });
     }, [currentPage, search, filter]);
 
-    const handleLogout = () => {
-        localStorage.removeItem('token');
-        window.location.href = 'http://localhost:3000';
-    }
     const handleSearch = (event) => {
         const {value} = event.target;
         setSearch(value);
@@ -125,7 +120,6 @@ const Availibites = (props) => {
                                              currentPage === totalPages
                                          }/>
                     </Pagination>
-
                     </tbody>
                 </table>
             </div>

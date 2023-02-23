@@ -1,11 +1,10 @@
 import React from 'react';
 
 const AvailibityTable = (props) => {
-    const [email, setEmail] = React.useState(localStorage.getItem('email'));
-    const [to, setTo] = React.useState(props.owner.email);
-    const [subject, setSubject] = React.useState("Study Buddy");
-    const [message, setMessage] = React.useState("Hello, I would like to study with you.");
-
+    const [email] = React.useState(localStorage.getItem('email'));
+    const [to] = React.useState(props.owner.email);
+    const [subject] = React.useState("Study Buddy");
+    const [message] = React.useState("Hello, I would like to study with you.");
 
     const sendEmail = async (e) => {
         e.preventDefault();
@@ -31,11 +30,9 @@ const AvailibityTable = (props) => {
             alert("Email sent successfully");
             window.location.reload();
         }
-
     };
 
     return (
-
             <tr>
             <td>{props.owner.name}</td>
             <td>
@@ -45,8 +42,6 @@ const AvailibityTable = (props) => {
             <td>{props.owner.topic}</td>
 
         </tr>
-
-
     );
 };
 

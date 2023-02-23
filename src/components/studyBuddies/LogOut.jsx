@@ -1,6 +1,7 @@
 import React from 'react';
 
 const LogOut = () => {
+
     const handleLogout = () => {
         localStorage.removeItem('token');
         window.location.href = 'http://localhost:3000';
@@ -9,7 +10,8 @@ const LogOut = () => {
     return (
         <div>
             <button onClick={handleLogout} className="btn btn-outline-info"
-                    style={{float: "right", margin: "10px"}}>Logout</button>
+                    style={{float: "right", margin: "10px"}}>Logout
+            </button>
         </div>
     );
 };

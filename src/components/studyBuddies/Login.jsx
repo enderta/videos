@@ -43,7 +43,7 @@ const Login = () => {
             })
             .catch(err => console.log(err))
     }
-    console.log(localStorage)
+
     return (
         <div>
             <div className="container">
