@@ -3,6 +3,7 @@ import Owner from "./Owner";
 import {Link} from "react-router-dom";
 import Pagination from "react-bootstrap/Pagination";
 import Button from "react-bootstrap/Button";
+import LogOut from "./LogOut";
 
 const Owners = (props) => {
 
@@ -74,8 +75,7 @@ const Owners = (props) => {
                   <span>
                <div className="col-md-6">
                     <div className="btn-group" role="group" aria-label="Basic example">
-                    <button onClick={handleLogout} className="btn btn-outline-info"
-                            style={{float: "right", margin: "10px"}}>Logout</button>
+                 <LogOut/>
                       <button className="btn btn-outline-info" style={{float: "right", margin: "10px"}}>
                             <Link to='/availability' style={{textDecoration:"none"}}  >Add Availability</Link>
                       </button>
