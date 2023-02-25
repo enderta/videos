@@ -1,8 +1,9 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+import Card from "react-bootstrap/Card";
 
 const LandingPage = () => {
-    
+
     return (
         <div>
             <div>
@@ -28,12 +29,12 @@ const LandingPage = () => {
                             }}>
                                 <div className="card-body" style={{background: "none"}}>
                                     <>
-                                        <button className={"btn btn-outline-primary"}>
-                                            <Link to={"/login"}>Login</Link>
-                                        </button>
-                                        <button className={"btn btn-outline-primary"}>
-                                            <Link to={"/register"}>Register</Link>
-                                        </button>
+                                        <Card className={"btn btn-outline-primary"} style={{margin:"10px", background:"none"}}>
+                                            <Link to={"/login"} style={{textDecoration:"none", color:'green'}}>Login</Link>
+                                        </Card>
+                                        <Card className={"btn btn-outline-primary"} style={{margin:"10px", background:"none"}}>
+                                            <Link to={"/register"} style={{textDecoration:"none", color:'yellow'}}>Register</Link>
+                                        </Card>
                                     </>
                                 </div>
                             </div>

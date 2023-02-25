@@ -1,4 +1,6 @@
 import React from 'react';
+import {Form} from "react-bootstrap";
+import Button from "react-bootstrap/Button";
 
 const CreateAvailibity = () => {
     const [date, setDate] = React.useState(new Date());
@@ -39,21 +41,34 @@ const CreateAvailibity = () => {
             )
             .catch(err => console.log(err))
     }
+    const handleBack= (e) => {
+        e.preventDefault();
+        window.location.href = 'http://localhost:3000/home';
+    }
 
     return (
         <div>
-            <form>
-                <div className="form-group">
-                    <label htmlFor="date">Date</label>
-                    <input type="date" className="form-control" id="date" name="date" onChange={handleChange}
-                           placeholder="Enter date"/>
-                    <label htmlFor="topic">Topic</label>
-                    <input type="text" className="form-control" id="topic" name="topic" onChange={handleChange}
-                           placeholder="Enter topic"/>
-                    <button type="submit" className="btn btn-outline-primary" onClick={handleSubmit}>Create</button>
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-6 mt-5 mx-auto">
+                        <Form style={{ width: '50%', margin: 'auto' }}>
+                            <Form.Group controlId="formBasicDate">
+                                <Form.Label style={{color:"goldenrod"}}>Date</Form.Label>
+                                <Form.Control type="date" name="date" onChange={handleChange} />
+                            </Form.Group>
+                            <Form.Group controlId="formBasicTopic">
+                                <Form.Label style={{color:"goldenrod"}}>Topic</Form.Label>
+                                <Form.Control type="text" placeholder="Topic" name="topic" onChange={handleChange} />
+                            </Form.Group>
+                            <Button onClick={handleSubmit} className="btn btn-outline-info" style={{float: "right", margin: "10px"}}>Create</Button>
+                            <Button onClick={handleBack} className="btn btn-outline-info" style={{float: "right", margin: "10px"}}>Back</Button>
+                        </Form>
+                    </div>
                 </div>
-            </form>
+            </div>
         </div>
+
+
     );
 };
 

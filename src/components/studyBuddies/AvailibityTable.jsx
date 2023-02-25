@@ -1,47 +1,27 @@
 import React from 'react';
+import SendEmail from "./SendMail.jsx";
 
 const AvailibityTable = (props) => {
-    const [email] = React.useState(localStorage.getItem('email'));
-    const [to] = React.useState(props.owner.email);
-    const [subject] = React.useState("Study Buddy");
-    const [message] = React.useState("Hello, I would like to study with you.");
-
-    const sendEmail = async (e) => {
-        e.preventDefault();
-        const data = {
-            email,
-            to,
-            subject,
-            message
-        };
-        if (email === "" || to === "" || subject === "" || message === "") {
-            alert("Please fill all fields");
-        }else{
-            const response = await fetch("http://localhost:5000/send", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(data),
-            });
-            console.log(response);
-            const content = await response.json();
-            console.log(content);
-            alert("Email sent successfully");
-            window.location.reload();
-        }
-    };
 
     return (
-            <tr>
-            <td>{props.owner.name}</td>
-            <td>
-                <button className="btn btn-outline-info" onClick={sendEmail}>Send Email</button>
-            </td>
-            <td>{new Date(props.owner.availability_date).toLocaleDateString()}</td>
-            <td>{props.owner.topic}</td>
-
-        </tr>
+        <div>
+            <div className="container">
+                <div className="card-body">
+                    <h2 className="card-text">
+                       Name: {props.owner.name}
+                    </h2>
+                    <h2 className="card-text">
+                      Send Mail: <SendEmail owner={props.owner}/>
+                    </h2>
+                    <h2 className="card-text">
+                      Date:  {new Date(props.owner.availability_date).toLocaleDateString()}
+                    </h2>
+                    <h2 className="card-text">
+                       Topic: {props.owner.topic}
+                    </h2>
+                </div>
+            </div>
+        </div>
     );
 };
 

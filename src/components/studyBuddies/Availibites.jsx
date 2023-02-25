@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import AvailibityTable from "./AvailibityTable";
 import {Link} from "react-router-dom";
-import Pagination from "react-bootstrap/Pagination";
-import Button from "react-bootstrap/Button";
 import LogOut from "./LogOut";
 
 const Availibites = (props) => {
@@ -57,13 +55,17 @@ const Availibites = (props) => {
                         <input type="text" className="form-control" placeholder="Search" value={search}
                                onChange={handleSearch}/>
                     </div>
-                       <div className="col-md-6">
+                    <div className="col-md-6">
                         <div className="btn-group" role="group" aria-label="Basic example">
-                            <button type="button" className="btn btn-outline-info" onClick={handleDailyFilter}>Daily</button>
-                            <button type="button" className="btn btn-outline-info" onClick={handleWeeklyFilter}>Weekly</button>
-                            <button type="button" className="btn btn-outline-info" onClick={handleMonthlyFilter}>Monthly</button>
+                            <button type="button" className="btn btn-outline-info" onClick={handleDailyFilter}>Daily
+                            </button>
+                            <button type="button" className="btn btn-outline-info" onClick={handleWeeklyFilter}>Weekly
+                            </button>
+                            <button type="button" className="btn btn-outline-info"
+                                    onClick={handleMonthlyFilter}>Monthly
+                            </button>
                         </div>
-                       </div>
+                    </div>
                 </div>
             </div>
             <div>
@@ -72,56 +74,30 @@ const Availibites = (props) => {
                     <div className="btn-group" role="group" aria-label="Basic example">
                  <LogOut/>
                       <button className="btn btn-outline-info" style={{float: "right", margin: "10px"}}>
-                            <Link to='/availability' style={{textDecoration:"none"}}  >Add Availability</Link>
+                            <Link to='/availability' style={{textDecoration: "none"}}>Add Availability</Link>
                       </button>
                     </div>
                </div>
             </span>
             </div>
             <div className="container">
-                <table
-                    className="table table-responsive table-dark table-borderless table-striped table-bordered table-hover">
-                    <thead>
-                    <tr>
-                        <th scope="col">Name</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Availability Date</th>
-                        <th scope="col">Topics</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {owners.map(owner =>
-                        <AvailibityTable key={owner.id} owner={owner} owners={owners} setOwners={setOwners}/>)
-                    }
-                    <Pagination className={'pagination'}>
-                        <Pagination.First onClick={() => {
-                            setCurrentPage(1)
-                        }}
-                                          disabled={
-                                              currentPage === 1
-                                          }/>
-                        <Pagination.Prev onClick={() => {
-                            setCurrentPage(currentPage - 1)
-                        }}
-                                         disabled={
-                                             currentPage === 1
-                                         }/>
-                        <Pagination.Item>{currentPage}</Pagination.Item>
-                        <Pagination.Next onClick={() => {
-                            setCurrentPage(currentPage + 1)
-                        }}
-                                         disabled={
-                                             currentPage === totalPages
-                                         }/>
-                        <Pagination.Last onClick={() => {
-                            setCurrentPage(totalPages)
-                        }}
-                                         disabled={
-                                             currentPage === totalPages
-                                         }/>
-                    </Pagination>
-                    </tbody>
-                </table>
+                <div className="row">
+                    {owners.map(owner => {
+                        return (
+                            <div className="col-md-6">
+                                <div className="card mb-4 shadow-sm" style={{
+                                    background: "#2f4d0a",
+                                    border: "black solid 1px",
+                                    margin: '2px',
+                                    padding: '2px'
+                                }}>
+                                    <AvailibityTable key={owner.id} owner={owner} owners={owners}
+                                                     setOwners={setOwners}/>
+                                </div>
+                            </div>
+                        )
+                    })}
+                </div>
             </div>
         </div>
     );
