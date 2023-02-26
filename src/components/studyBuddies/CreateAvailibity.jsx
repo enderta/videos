@@ -22,7 +22,7 @@ const CreateAvailibity = () => {
             topic: topic,
             trainees_id: id
         }
-        fetch('http://localhost:3001/availability', {
+        fetch('https://study-buddies.onrender.com/availability', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -41,6 +41,7 @@ const CreateAvailibity = () => {
             )
             .catch(err => console.log(err))
     }
+    console.log()
     const handleBack= (e) => {
         e.preventDefault();
         window.location.href = 'http://localhost:3000/home';

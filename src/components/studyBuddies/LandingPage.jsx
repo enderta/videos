@@ -7,12 +7,12 @@ const LandingPage = () => {
     return (
         <div>
             <div>
-                <video autoPlay loop muted>
+               {/* <video autoPlay loop muted>
                     <source
                         src={require('./pexels-anthony-shkraba-8064146.mp4')}
                         type="video/mp4"
                     />
-                </video>
+                </video>*/}
                 <div className="container">
                     <div className="row">
                         <div className="col-6">

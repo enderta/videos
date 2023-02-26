@@ -7,6 +7,7 @@ import DasBoard from "./components/dasboard/DasBoard";
 import Gapi from "./components/dasboard/Gapi";
 import SendEmail from "./components/dasboard/SendEmail";
 import Pages from "./components/studyBuddies/Pages";
+import './App.css';
 function App() {
   return (
     <div>

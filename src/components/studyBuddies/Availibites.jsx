@@ -12,22 +12,27 @@ const Availibites = (props) => {
     const [filter, setFilter] = useState('daily');
 
     React.useEffect(() => {
-        fetch(`http://localhost:3001/availabilities?page=${currentPage}&search=${search}&filter=${filter}`,
+        fetch(`https://study-buddies.onrender.com/availabilities?search=${search}&filter=${filter}`,
             {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': localStorage.getItem('token')
+                    'Authorization': localStorage.getItem('token'),
+                    'Access-Control-Allow-Origin': '*',
+                    'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+
                 }
             })
             .then(response => response.json())
             .then(data => {
+
                 setOwners(data.data);
                 setCurrentPage(data.currentPage);
                 setTotalPages(data.totalPages);
             });
     }, [currentPage, search, filter]);
-
+    console.log(owners)
+    console.log(localStorage.getItem('id'))
     const handleSearch = (event) => {
         const {value} = event.target;
         setSearch(value);
@@ -86,7 +91,7 @@ const Availibites = (props) => {
                         return (
                             <div className="col-md-6">
                                 <div className="card mb-4 shadow-sm" style={{
-                                    background: "#2f4d0a",
+                                    background: "goldenrod",
                                     border: "black solid 1px",
                                     margin: '2px',
                                     padding: '2px'

@@ -22,7 +22,7 @@ const Login = () => {
             email,
             password
         }
-        fetch('http://localhost:3001/login', {
+        fetch('https://study-buddies.onrender.com/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -43,6 +43,7 @@ const Login = () => {
             })
             .catch(err => console.log(err))
     }
+    console.log()
 
     return (
         <div>

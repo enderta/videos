@@ -23,7 +23,7 @@ const Register = () => {
             email,
             password
         }
-        fetch('http://localhost:3001/register', {
+        fetch('https://study-buddies.onrender.com/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -31,15 +31,12 @@ const Register = () => {
             body: JSON.stringify(user)
         }).then(res => res.json())
             .then(data => {
-                if (data.token) {
-                    alert('You are registered')
-                    localStorage.setItem('token', data.token);
-                    window.location.href = '/login';
-                }
-                else {
-                    alert("This email is already registered")
-                    window.location.reload();
-                }
+             localStorage.setItem('token', data.token);
+                localStorage.setItem('email', email);
+                localStorage.setItem('id', data.id);
+                alert('You have successfully registered! Please login to continue')
+                window.location.href = '/login';
+
             })
             .catch(err => console.log(err))
     }
