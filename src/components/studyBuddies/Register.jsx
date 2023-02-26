@@ -1,7 +1,7 @@
 import React from 'react';
 import {Form} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
-import {wait} from "@testing-library/user-event/dist/utils";
+
 
 const Register = () => {
     const [name, setFirstName] = React.useState('');

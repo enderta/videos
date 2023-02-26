@@ -7,6 +7,7 @@ const LandingPage = () => {
     return (
         <div>
             <div>
+
                {/* <video autoPlay loop muted>
                     <source
                         src={require('./pexels-anthony-shkraba-8064146.mp4')}
@@ -29,6 +30,7 @@ const LandingPage = () => {
                             }}>
                                 <div className="card-body" style={{background: "none"}}>
                                     <>
+                                        <h1 style={{color:"darkgoldenrod",textAlign:"center",margin:"10px"}}>Lets Study</h1>
                                         <Card className={"btn btn-outline-primary"} style={{margin:"10px", background:"none"}}>
                                             <Link to={"/login"} style={{textDecoration:"none", color:'green'}}>Login</Link>
                                         </Card>
