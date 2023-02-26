@@ -91,7 +91,7 @@ const Availibites = (props) => {
                         return (
                             <div className="col-md-6">
                                 <div className="card mb-4 shadow-sm" style={{
-                                    background: "goldenrod",
+                                    background: "darkgoldenrod",
                                     border: "black solid 1px",
                                     margin: '2px',
                                     padding: '2px'
