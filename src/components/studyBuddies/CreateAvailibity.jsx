@@ -55,7 +55,10 @@ const CreateAvailibity = () => {
                         <Form style={{ width: '50%', margin: 'auto' }}>
                             <Form.Group controlId="formBasicDate">
                                 <Form.Label style={{color:"goldenrod"}}>Date</Form.Label>
-                                <Form.Control type="date" name="date" onChange={handleChange} />
+                                <Form.Control type="date"
+                                              min={new Date().toISOString().split('T')[0]}
+                                              max={new Date(new Date().setMonth(new Date().getMonth() + 1)).toISOString().split('T')[0]}
+                                              name="date" onChange={handleChange} />
                             </Form.Group>
                             <Form.Group controlId="formBasicTopic">
                                 <Form.Label style={{color:"goldenrod"}}>Topic</Form.Label>
