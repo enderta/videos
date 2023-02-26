@@ -34,7 +34,7 @@ const SendMail = (props) => {
 
     return (
         <div>
-            <button className="btn btn-outline-info" onClick={sendEmail}>Send Email</button>
+            <button className="btn btn-outline-dark" onClick={sendEmail}>Notify by Email</button>
         </div>
     );
 };

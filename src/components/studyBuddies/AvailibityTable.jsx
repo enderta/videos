@@ -11,7 +11,7 @@ const AvailibityTable = (props) => {
                        Name: {props.owner.name}
                     </h2>
                     <h2 className="card-text">
-                      Send Mail: <SendEmail owner={props.owner}/>
+                     <SendEmail owner={props.owner}/>
                     </h2>
                     <h2 className="card-text">
                       Date:  {new Date(props.owner.availability_date).toLocaleDateString()}
