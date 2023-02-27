@@ -24,7 +24,7 @@ const Register = () => {
             email,
             password
         }
-        fetch('https://study-buddies.onrender.com/register', {
+        fetch('http://localhost:5000/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -54,7 +54,12 @@ const Register = () => {
 
         return (
             <div>
+
                 <div className="container">
+                    <div>
+                        <image src={require('./pexels-roman-odintsov-4551832.jpg')}
+                               style={{position: 'absolute', opacity: '0.3', height: "100%", width: "100%"}}/>
+                    </div>
                     <div className="row">
                         <div className="col-md-6 mt-5 mx-auto">
                             <Form style={{width: '50%', margin: 'auto'}}>

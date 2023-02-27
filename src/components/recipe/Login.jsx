@@ -22,7 +22,7 @@ const Login = () => {
             email,
             password
         }
-        fetch('https://study-buddies.onrender.com/login', {
+        fetch('http://localhost:5000/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -48,6 +48,17 @@ const Login = () => {
     return (
         <div>
             <div className="container">
+                <img
+                    src={require('./pexels-roman-odintsov-4551832.jpg')}
+                    style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        position: 'relative',
+                        opacity: '0.3',
+                    }}
+                    alt="Cover Image"
+                />
                 <div className="row">
                     <div className="col-md-6 mt-5 mx-auto">
                         <Form style={{ width: '50%', margin: 'auto' }}>

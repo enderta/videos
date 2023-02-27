@@ -9,7 +9,7 @@ const LandingPage = () => {
         <div>
 
             <div className="container">
-                <img
+               {/* <img
                     src={require('./pexels-roman-odintsov-4551832.jpg')}
                     style={{
                         width: '100%',
@@ -19,7 +19,15 @@ const LandingPage = () => {
                         opacity: '0.3',
                     }}
                     alt="Cover Image"
-                />
+                />*/}
+                <video autoPlay loop muted>
+                    <source
+                        src={require('./pexels-taryn-elliott-7172142.mp4')}
+                        type="video/mp4"
+                        opacity="0.3"
+
+                    />
+                </video>
                 <div className="row">
                     <div className="col-6">
                         <div className="card" style={{
@@ -35,7 +43,7 @@ const LandingPage = () => {
                         }}>
                             <div className="card-body" style={{background: "none"}}>
                                 <>
-                                    <h1 style={{color:"darkgoldenrod",textAlign:"center",margin:"10px"}}>Lets Study</h1>
+                                    <h1 style={{color:"darkgoldenrod",textAlign:"center",margin:"10px"}}>Let`s Cook</h1>
                                     <Card className={"btn btn-outline-primary"} style={{margin:"10px", background:"none"}}>
                                         <Link to={"/login"} style={{textDecoration:"none", color:'green'}}>Login</Link>
                                     </Card>
