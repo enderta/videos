@@ -40,6 +40,9 @@ const Register = () => {
                 else if(data.errors[0].msg === "User already exists"){
                     alert("User already exists");
                 }
+                else if(data.errors[0].msg.length>0&&!email.includes("@")){
+                    alert("Please enter a valid email");
+                }
                 else {
                     alert("Fill in all fields");
                 }
@@ -47,19 +50,19 @@ const Register = () => {
             .catch(err => console.log(err))
     }
 
-        const handleBack = (e) => {
-            e.preventDefault();
-            window.location.href = '/';
-        }
+    const handleBack = (e) => {
+        e.preventDefault();
+        window.location.href = '/';
+    }
 
-        return (
+    return (
             <div>
 
                 <div className="container">
-                    <div>
+                    {/*<div>
                         <image src={require('./pexels-roman-odintsov-4551832.jpg')}
                                style={{position: 'absolute', opacity: '0.3', height: "100%", width: "100%"}}/>
-                    </div>
+                    </div>*/}
                     <div className="row">
                         <div className="col-md-6 mt-5 mx-auto">
                             <Form style={{width: '50%', margin: 'auto'}}>

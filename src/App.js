@@ -9,7 +9,7 @@ import SendEmail from "./components/dasboard/SendEmail";
 
 import './App.css';
 import LandingPage from "./components/recipe/LandingPage";
-import Pages from "./components/studyBuddies/Pages";
+import Pages from "./components/recipe/Pages";
 function App() {
   return (
     <div>

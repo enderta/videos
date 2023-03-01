@@ -43,12 +43,12 @@ const Login = () => {
             })
             .catch(err => console.log(err))
     }
-    console.log()
+    console.log(localStorage)
 
     return (
         <div>
             <div className="container">
-                <img
+               {/* <img
                     src={require('./pexels-roman-odintsov-4551832.jpg')}
                     style={{
                         width: '100%',
@@ -58,7 +58,7 @@ const Login = () => {
                         opacity: '0.3',
                     }}
                     alt="Cover Image"
-                />
+                />*/}
                 <div className="row">
                     <div className="col-md-6 mt-5 mx-auto">
                         <Form style={{ width: '50%', margin: 'auto' }}>
