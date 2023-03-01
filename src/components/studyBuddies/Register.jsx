@@ -40,6 +40,9 @@ const Register = () => {
                 else if(data.errors[0].msg === "User already exists"){
                     alert("User already exists");
                 }
+                else if(!email.includes("@")){
+                    alert("Please enter a valid email");
+                }
                 else {
                     alert("Fill in all fields");
                 }

@@ -6,7 +6,6 @@ import LogOut from "./LogOut";
 const Availibites = (props) => {
 
     const [owners, setOwners] = React.useState([]);
-    const [currentPage, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
     const [search, setSearch] = useState('');
     const [filter, setFilter] = useState('daily');
@@ -27,29 +26,28 @@ const Availibites = (props) => {
             .then(data => {
 
                 setOwners(data.data);
-                setCurrentPage(data.currentPage);
                 setTotalPages(data.totalPages);
             });
-    }, [currentPage, search, filter]);
+    }, [ search, filter]);
     console.log(owners)
     console.log(localStorage.getItem('id'))
     const handleSearch = (event) => {
         const {value} = event.target;
         setSearch(value);
-        setCurrentPage(1);
     };
 
-    function handleDailyFilter() {
-        setFilter('daily');
-    }
-
-    function handleWeeklyFilter() {
-        setFilter('weekly');
-    }
-
-    function handleMonthlyFilter() {
-        setFilter('monthly');
-    }
+   const handleFilter=(event)=>{
+       event.preventDefault()
+         if(event.target.innerText==='Daily'){
+             setFilter('daily');
+         }
+         else if(event.target.innerText==='Weekly'){
+             setFilter('weekly');
+         }
+            else if(event.target.innerText==='Monthly'){
+                setFilter('monthly');
+         }
+   }
 
     return (
         <div>
@@ -62,12 +60,11 @@ const Availibites = (props) => {
                     </div>
                     <div className="col-md-6">
                         <div className="btn-group" role="group" aria-label="Basic example">
-                            <button type="button" className="btn btn-outline-info" onClick={handleDailyFilter}>Daily
+                            <button type="button" className="btn btn-outline-info" value={"daily"} onClick={handleFilter}>Daily
                             </button>
-                            <button type="button" className="btn btn-outline-info" onClick={handleWeeklyFilter}>Weekly
+                            <button type="button" className="btn btn-outline-info" value={"weekly"} onClick={handleFilter}>Weekly
                             </button>
-                            <button type="button" className="btn btn-outline-info"
-                                    onClick={handleMonthlyFilter}>Monthly
+                            <button type="button" className="btn btn-outline-info" value={"monthly"} onClick={handleFilter}>Monthly
                             </button>
                         </div>
                     </div>
