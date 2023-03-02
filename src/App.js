@@ -10,10 +10,11 @@ import SendEmail from "./components/dasboard/SendEmail";
 import './App.css';
 import LandingPage from "./components/recipe/LandingPage";
 import Pages from "./components/recipe/Pages";
+import Quizes from "./components/quizes/Quizes";
 function App() {
   return (
     <div>
- <Pages />
+ <Quizes/>
 
     </div>
   );
