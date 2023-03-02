@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import AvailibityTable from "./AvailibityTable";
 import {Link} from "react-router-dom";
 import LogOut from "./LogOut";
+import ResultPage from "./ResultPage";
 
 const Availibites = (props) => {
 
@@ -51,26 +52,32 @@ const Availibites = (props) => {
 
     return (
         <div>
-            <h1 style={{color: "yellow", textAlign: "center"}}>List of Trainees</h1>
-            <div className="container">
-                <div className="row">
-                    <div className="col-md-6">
-                        <input type="text" className="form-control" placeholder="Search" value={search}
-                               onChange={handleSearch}/>
-                    </div>
-                    <div className="col-md-6">
-                        <div className="btn-group" role="group" aria-label="Basic example">
-                            <button type="button" className="btn btn-outline-info" value={"daily"} onClick={handleFilter}>Daily
-                            </button>
-                            <button type="button" className="btn btn-outline-info" value={"weekly"} onClick={handleFilter}>Weekly
-                            </button>
-                            <button type="button" className="btn btn-outline-info" value={"monthly"} onClick={handleFilter}>Monthly
-                            </button>
+            {owners.length<=1 ? (
+                <div>
+                    <ResultPage filter={setFilter}/>
+                </div>
+            ) : (
+                <div>
+                    <h1 style={{color: "yellow", textAlign: "center"}}>List of Trainees</h1>
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-md-6">
+                                <input type="text" className="form-control" placeholder="Search" value={search}
+                                       onChange={handleSearch}/>
+                            </div>
+                            <div className="col-md-6">
+                                <div className="btn-group" role="group" aria-label="Basic example">
+                                    <button type="button" className="btn btn-outline-info" value={"daily"} onClick={handleFilter}>Daily
+                                    </button>
+                                    <button type="button" className="btn btn-outline-info" value={"weekly"} onClick={handleFilter}>Weekly
+                                    </button>
+                                    <button type="button" className="btn btn-outline-info" value={"monthly"} onClick={handleFilter}>Monthly
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div>
+                    <div>
                   <span>
                <div className="col-md-6">
                     <div className="btn-group" role="group" aria-label="Basic example">
@@ -81,26 +88,29 @@ const Availibites = (props) => {
                     </div>
                </div>
             </span>
-            </div>
-            <div className="container">
-                <div className="row">
-                    {owners.map(owner => {
-                        return (
-                            <div className="col-md-6">
-                                <div className="card mb-4 shadow-sm" style={{
-                                    background: "darkgoldenrod",
-                                    border: "black solid 1px",
-                                    margin: '2px',
-                                    padding: '2px'
-                                }}>
-                                    <AvailibityTable key={owner.id} owner={owner} owners={owners}
-                                                     setOwners={setOwners}/>
-                                </div>
-                            </div>
-                        )
-                    })}
+                    </div>
+                    <div className="container">
+                        <div className="row">
+                            {owners.map(owner => {
+                                return (
+                                    <div className="col-md-6">
+                                        <div className="card mb-4 shadow-sm" style={{
+                                            background: "darkgoldenrod",
+                                            border: "black solid 1px",
+                                            margin: '2px',
+                                            padding: '2px'
+                                        }}>
+                                            <AvailibityTable key={owner.id} owner={owner} owners={owners}
+                                                             setOwners={setOwners}/>
+                                        </div>
+                                    </div>
+                                )
+                            })}
+                        </div>
+                    </div>
                 </div>
-            </div>
+            )
+        }
         </div>
     );
 };
