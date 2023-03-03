@@ -5,6 +5,8 @@ import LandingPage from "./LandingPage";
 import CreateAvailibity from "./CreateAvailibity";
 import Login from "./Login";
 import Register from "./Register";
+import UserProfile from "./UserProfile";
+import MyAvailability from "./MyAvailability";
 const Pages = () => {
     return (
         <div>
@@ -14,6 +16,8 @@ const Pages = () => {
                 <Route path="/availability" element={<CreateAvailibity/>}/>
                 <Route path="/login" element={<Login/>}/>
                 <Route path="/register" element={<Register/>}/>
+                <Route path="/profile" element={<UserProfile />}/>
+                <Route path="/myavailability" element={<MyAvailability/>}/>
             </Routes>
         </div>
     );

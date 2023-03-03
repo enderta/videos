@@ -1,6 +1,7 @@
 import React from 'react';
 import {Form} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
+import NavBar from "./NavBar";
 
 const CreateAvailibity = () => {
     const [date, setDate] = React.useState(new Date());
@@ -41,7 +42,7 @@ const CreateAvailibity = () => {
             )
             .catch(err => console.log(err))
     }
-    console.log()
+    console.log(localStorage)
     const handleBack= (e) => {
         e.preventDefault();
         window.location.href = 'http://localhost:3000/home';
@@ -49,6 +50,9 @@ const CreateAvailibity = () => {
 
     return (
         <div>
+            <div>
+            {<NavBar />}
+        </div>
             <div className="container">
                 <div className="row">
                     <div className="col-md-6 mt-5 mx-auto">

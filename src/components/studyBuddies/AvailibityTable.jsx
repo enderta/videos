@@ -1,10 +1,12 @@
 import React from 'react';
 import SendEmail from "./SendMail.jsx";
+import NavBar from "./NavBar";
 
 const AvailibityTable = (props) => {
 
     return (
         <div>
+
             <div className="container">
                 <div className="card-body">
                     <h2 className="card-text">

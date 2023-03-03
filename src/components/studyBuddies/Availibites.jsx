@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import AvailibityTable from "./AvailibityTable";
 import {Link} from "react-router-dom";
-import LogOut from "./LogOut";
+import Logout from "./Logout";
 import ResultPage from "./ResultPage";
+import NavBar from "./NavBar";
 
 const Availibites = (props) => {
 
@@ -52,6 +53,9 @@ const Availibites = (props) => {
 
     return (
         <div>
+            <div>
+            {<NavBar />}
+        </div>
             {owners.length<=1 ? (
                 <div>
                     <ResultPage filter={setFilter}/>
@@ -81,10 +85,10 @@ const Availibites = (props) => {
                   <span>
                <div className="col-md-6">
                     <div className="btn-group" role="group" aria-label="Basic example">
-                 <LogOut/>
-                      <button className="btn btn-outline-info" style={{float: "right", margin: "10px"}}>
+
+                     {/* <button className="btn btn-outline-info" style={{float: "right", margin: "10px"}}>
                             <Link to='/availability' style={{textDecoration: "none"}}>Add Availability</Link>
-                      </button>
+                      </button>*/}
                     </div>
                </div>
             </span>
