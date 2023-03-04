@@ -1,7 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import AvailibityTable from "./AvailibityTable";
-import {Link} from "react-router-dom";
-import Logout from "./Logout";
 import ResultPage from "./ResultPage";
 import NavBar from "./NavBar";
 

@@ -16,8 +16,7 @@ const UserInfoMenu = () => {
                 </Dropdown.Toggle>
 
                 <Dropdown.Menu>
-                   {/* <Dropdown.Item href="/home">Home</Dropdown.Item>*/}
-                   {/* <Dropdown.Item href="/availability">Create Availability</Dropdown.Item>*/}
+
                     <Dropdown.Item href="/profile">Profile</Dropdown.Item>
                     <Dropdown.Item href="/logout">Logout</Dropdown.Item>
                 </Dropdown.Menu>

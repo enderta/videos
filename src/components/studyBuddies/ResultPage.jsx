@@ -19,12 +19,8 @@ const ResultPage = (props) => {
                 <Button onClick={handleBack} variant="primary" type="submit">
                     Back
                 </Button>
-                <div>
-                    <br/>
-                </div>
-                <Button onClick={handleAll} variant="primary" type="submit">
-                    All Available
-                </Button>
+
+
             </div>
         </div>
     );

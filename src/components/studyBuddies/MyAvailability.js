@@ -19,6 +19,21 @@ const MyAvailability = () => {
             .catch((err) => console.log(err));
     }, []);
     console.log(myDate);
+    const handleDelete = (id) => {
+        fetch(`https://study-buddies.onrender.com/availability/${id}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: localStorage.getItem("token"),
+            }
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                setMyDates(myDate.filter((date) => date.id !== id));
+            })
+            .catch((err) => console.log(err));
+    }
 
     return (
         <div>
