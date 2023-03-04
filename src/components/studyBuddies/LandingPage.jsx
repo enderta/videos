@@ -32,11 +32,7 @@ const LandingPage = () => {
                                         <br/>
                                         <br/>
                                         <br/>
-                                        <br/>
 
-                                        <br/>
-
-                                        <br/>
                                         <Card className={"btn btn-outline-primary"} style={{margin:"10px", background:"darkblue",width:"200px"}}>
                                             <Link to={"/login"} style={{textDecoration:"none", color:'green',}}>Login</Link>
                                         </Card>
