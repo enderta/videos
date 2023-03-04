@@ -69,7 +69,7 @@ const CreateAvailibity = () => {
                                 <Form.Control type="text" placeholder="Topic" name="topic" onChange={handleChange} />
                             </Form.Group>
                             <Button onClick={handleSubmit} className="btn btn-outline-info" style={{float: "right", margin: "10px"}}>Create</Button>
-                            <Button onClick={handleBack} className="btn btn-outline-info" style={{float: "right", margin: "10px"}}>Back</Button>
+                         {/*   <Button onClick={handleBack} className="btn btn-outline-info" style={{float: "right", margin: "10px"}}>Back</Button>*/}
                         </Form>
                     </div>
                 </div>

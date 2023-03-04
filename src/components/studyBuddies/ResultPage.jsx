@@ -12,13 +12,16 @@ const ResultPage = (props) => {
  }
     return (
         <div>
-            <h1>
+            <h1 style={{color:"white"}}>
                 There is no available trainee for this date. Please try another date.
             </h1>
             <div>
                 <Button onClick={handleBack} variant="primary" type="submit">
                     Back
                 </Button>
+                <div>
+                    <br/>
+                </div>
                 <Button onClick={handleAll} variant="primary" type="submit">
                     All Available
                 </Button>
