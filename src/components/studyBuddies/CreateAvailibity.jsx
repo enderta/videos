@@ -35,6 +35,9 @@ const CreateAvailibity = () => {
                     if (data.error) {
                         alert(data.error);
                     } else {
+                        localStorage.setItem('date', formattedDate);
+                        localStorage.setItem('topic', data.topic);
+                        localStorage.setItem('av_id', data.id)
                         alert('You have created a new available date!');
                         window.location.href = '/home';
                     }
@@ -43,10 +46,7 @@ const CreateAvailibity = () => {
             .catch(err => console.log(err))
     }
     console.log(localStorage)
-    const handleBack= (e) => {
-        e.preventDefault();
-        window.location.href = 'http://localhost:3000/home';
-    }
+
 
     return (
         <div>
