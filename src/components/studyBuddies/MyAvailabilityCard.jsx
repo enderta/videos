@@ -9,10 +9,6 @@ const MyAvailabilityCard = (props) => {
     const [date, setDate] = React.useState(new Date());
     const [topic, setTopic] = React.useState('');
 
-    const handleEdit = (e) => {
-        e.preventDefault();
-        setEdit(true);
-    }
     const handleDelete = (e) => {
         e.preventDefault();
         fetch(`https://study-buddies.onrender.com/availability/${props.date.id}`, {
@@ -96,18 +92,17 @@ const MyAvailabilityCard = (props) => {
                             </Form>
                         </Modal.Body>
                         <Modal.Footer>
-                            <Button style={{margin:"10px"}} variant="secondary" onClick={()=>setEdit(!edit)}>
+                            <Button style={{margin:"10px"}} variant="outline-info" onClick={()=>setEdit(!edit)}>
                                 Close
                             </Button>
                             <br/>
-                            <Button variant="primary" onClick={handleUpdate}>
+                            <Button variant="outline-success" onClick={handleUpdate}>
                                 Save Changes
                             </Button>
                         </Modal.Footer>
                     </Modal>
                 </div>
             </div>
-
         </div>
     );
 };
