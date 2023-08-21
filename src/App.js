@@ -6,8 +6,7 @@ import MoviesSeries from "./components/moives-series/MoviesSeries";
 import DasBoard from "./components/dasboard/DasBoard";
 import Gapi from "./components/dasboard/Gapi";
 import SendEmail from "./components/dasboard/SendEmail";
-
-import './App.css';
+import Main from "./components/video/video2/Main";
 import LandingPage from "./components/recipe/LandingPage";
 import Pages from "./components/studyBuddies/Pages";
 import Quizes from "./components/quizes/Quizes";
@@ -15,7 +14,7 @@ import Quizes from "./components/quizes/Quizes";
 function App() {
   return (
     <div>
- <Pages />
+<MoviesSeries/>
 
     </div>
   );
